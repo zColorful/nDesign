@@ -1,0 +1,240 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$nancalui-timeline-item-dot-size: 8px;
+
+.#{$nancalui-prefix}-timeline {
+  &-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .#{$nancalui-prefix}-timeline-item {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      &-axis {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 12px;
+      }
+
+      &-line {
+        position: relative;
+        height: calc(100% - #{$nancalui-timeline-item-dot-size});
+        min-height: 20px;
+        border-left-width: 2px;
+        border-left-color: $nancalui-dividing-line;
+
+        &-extra {
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &:first-child {
+          display: none;
+        }
+      }
+
+      &-data-left {
+        text-align: end;
+      }
+
+      &-data-left,
+      &-data-right {
+        margin-bottom: 24px;
+        margin-top: -2px;
+        flex: 1;
+      }
+
+      &-line-style {
+        &-dashed {
+          border-left-style: dashed;
+        }
+
+        &-solid {
+          border-left-style: solid;
+        }
+
+        &-dotted {
+          border-left-style: dotted;
+        }
+
+        &-none {
+          border-left-style: none;
+        }
+      }
+
+      .#{$nancalui-prefix}-timeline-middle-zone {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    &-center {
+      .#{$nancalui-prefix}-timeline-item {
+        &-data-top,
+        &-data-bottom {
+          text-align: center;
+          padding: 0 6px;
+
+          > div {
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+
+    .#{$nancalui-prefix}-timeline-item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      &-axis {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 12px 0;
+      }
+
+      &-line {
+        position: relative;
+        min-width: 60px;
+        width: calc(100% - #{$nancalui-timeline-item-dot-size});
+        border-bottom-width: 2px;
+        border-bottom-color: $nancalui-dividing-line;
+
+        &-extra {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &:first-child {
+        .#{$nancalui-prefix}-timeline-item-line {
+          &:first-child {
+            opacity: 0;
+          }
+        }
+      }
+
+      &-data-top,
+      &-data-bottom {
+        padding-right: 12px;
+        flex: 1;
+      }
+
+      &-line-style {
+        &-dashed {
+          border-bottom-style: dashed;
+        }
+
+        &-solid {
+          border-bottom-style: solid;
+        }
+
+        &-dotted {
+          border-bottom-style: dotted;
+        }
+
+        &-none {
+          border-bottom-style: none;
+        }
+      }
+
+      .#{$nancalui-prefix}-timeline-middle-zone {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.#{$nancalui-prefix}-timeline-item {
+  &-dot {
+    &,
+    & > svg {
+      width: $nancalui-timeline-item-dot-size;
+      height: $nancalui-timeline-item-dot-size;
+      flex-shrink: 0;
+    }
+
+    & > i {
+      font-size: $nancalui-timeline-item-dot-size;
+      vertical-align: 0;
+    }
+  }
+
+  //&:last-child {
+  //  .#{$nancalui-prefix}-timeline-item-line {
+  //    &:last-child {
+  //      display: none;
+  //    }
+  //  }
+  //}
+  &-type {
+    &-primary {
+      border: 2px solid $nancalui-placeholder;
+      border-radius: 50%;
+    }
+
+    &-success {
+      i {
+        color: $nancalui-success;
+      }
+    }
+
+    &-error {
+      i {
+        color: $nancalui-danger;
+      }
+    }
+
+    &-warning {
+      i {
+        color: $nancalui-warning;
+      }
+    }
+
+    &-running {
+      line-height: 16px;
+      text-align: center;
+      animation: nancalui-timeline-running 1.5s linear infinite;
+      border: 2px solid $nancalui-success;
+      border-radius: 50%;
+    }
+  }
+}
+
+@keyframes nancalui-timeline-running {
+  0% {
+    transform: rotate(0deg);
+    color: $nancalui-success;
+    border-color: $nancalui-success;
+  }
+
+  50% {
+    transform: rotate(180deg);
+    color: $nancalui-success;
+    border-color: $nancalui-success;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    color: $nancalui-success;
+    border-color: $nancalui-success;
+  }
+}

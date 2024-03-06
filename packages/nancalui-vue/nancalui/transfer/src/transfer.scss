@@ -1,0 +1,271 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$nancalui-transfer-header-height: 32px;
+$nancalui-transfer-body-list-item-height: 32px;
+$nancalui-transfer-width: 240px;
+$nancalui-transfer-height: 320px;
+$nancalui-transfer-item-draggable-height-gap: 20px;
+$nancalui-transfer-item-draggable-color-bg-gap: gray;
+$nancalui-transfer-padding-vertical: 12px;
+
+@mixin text-ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@keyframes transfer-drag-item-blink {
+  0% {
+    background-color: $nancalui-primary-hover;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+.#{$nancalui-prefix}-transfer {
+  display: flex;
+  align-items: center;
+
+  &-view {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: $nancalui-transfer-width;
+    height: $nancalui-transfer-height;
+    border: 1px solid $nancalui-line;
+    border-radius: $nancalui-border-radius;
+
+    &__header {
+      display: flex;
+      height: $nancalui-transfer-header-height;
+      line-height: $nancalui-transfer-header-height;
+      border-bottom: 1px solid $nancalui-divider;
+      padding: 0 $nancalui-transfer-padding-vertical;
+      font-size: 12px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #333333;
+
+      &-title {
+        display: flex;
+        align-items: center;
+
+        &-checkbox {
+          overflow: hidden;
+        }
+
+        .#{$nancalui-prefix}-checkbox {
+          @include text-ellipsis;
+
+          font-size: inherit;
+
+          // fix the title in checkbox-label ellipsis not work
+          &__label-text {
+            @include text-ellipsis;
+          }
+        }
+
+        // fix simple mode the title  ellipsis not work
+        &-simple {
+          @include text-ellipsis;
+        }
+      }
+
+      .#{$nancalui-prefix}-icon__container {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      &-clear-btn {
+        cursor: pointer;
+      }
+
+      &-count {
+        margin-right: 2px;
+        margin-left: 8px;
+        color: $nancalui-aide-text;
+        font-weight: normal;
+
+        &-unit {
+          margin-left: 4px;
+        }
+      }
+    }
+
+    &__header > *:first-child {
+      flex: 1;
+      @include text-ellipsis;
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+
+    &__search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 8px $nancalui-transfer-padding-vertical 0 $nancalui-transfer-padding-vertical;
+    }
+
+    &__body {
+      // display: flex;
+      // flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+
+      .#{$nancalui-prefix}-checkbox__group > * {
+        margin-top: 0;
+      }
+
+      &-list {
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        flex-wrap: nowrap;
+
+        &-empty {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $nancalui-disabled-text;
+        }
+      }
+
+      &-nodrag {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    padding: 0 $nancalui-transfer-padding-vertical;
+    width: 100%;
+    cursor: pointer;
+    height: $nancalui-transfer-body-list-item-height;
+    line-height: $nancalui-transfer-body-list-item-height;
+    font-size: $nancalui-font-size;
+
+    &__content {
+      @include text-ellipsis;
+    }
+
+    &__checkbox {
+      @include text-ellipsis;
+    }
+
+    &-disabled {
+      color: $nancalui-disabled-text;
+      background-color: $nancalui-disabled-bg;
+      cursor: not-allowed;
+    }
+
+    &:not(&-disabled):hover {
+      color: $nancalui-list-item-hover-text;
+      background-color: $nancalui-list-item-hover-bg;
+    }
+
+    &__remove-btn {
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    // 拖动样式
+    &-draggable::before {
+      position: absolute;
+      right: 0;
+      left: 0;
+      display: block;
+      height: $nancalui-transfer-item-draggable-height-gap;
+      border-radius: 50%;
+      content: '';
+    }
+
+    &-gap-bottom::before {
+      bottom: -$nancalui-transfer-item-draggable-height-gap;
+      background-color: $nancalui-transfer-item-draggable-color-bg-gap;
+    }
+
+    &-gap-top::before {
+      top: -$nancalui-transfer-item-draggable-height-gap;
+      background-color: $nancalui-transfer-item-draggable-color-bg-gap;
+    }
+
+    &-dragging {
+      color: $nancalui-transfer-item-draggable-color-bg-gap !important;
+      background-color: $nancalui-transfer-item-draggable-color-bg-gap !important;
+    }
+
+    &-dragged {
+      animation: transfer-drag-item-blink 0.4s;
+      animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    }
+  }
+
+  &__operations {
+    width: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-btn {
+      display: block;
+      border-color: $nancalui-disabled-line !important;
+
+      &:last-child {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &__simple {
+    .#{$nancalui-prefix}-transfer__view-source {
+      border-right: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .#{$nancalui-prefix}-transfer__view-target {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__disabled {
+    .#{$nancalui-prefix}-transfer-view__header {
+      color: $nancalui-disabled-text;
+    }
+  }
+
+  .#{$nancalui-prefix}-checkbox label {
+    display: flex;
+    width: 100% !important;
+  }
+  .#{$nancalui-prefix}-checkbox label .#{$nancalui-prefix}-checkbox__material {
+    flex-shrink: 0;
+  }
+}
+
+//   &-drag-dragging {
+//     background-color: $nancalui-brand-foil;
+//   }
+
+//   &-drag-over {
+//     background-color: $nancalui-brand-hover;
+//   }
+// }
+// .#{$nancalui-prefix}-transfer–drag-over-top {
+//   border-top-color: $nancalui-brand-active;
+// }
+
+// .#{$nancalui-prefix}-transfer–drag-over-bottom {
+//   border-bottom-color: $nancalui-brand-active;
+// }

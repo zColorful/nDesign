@@ -1,0 +1,56 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$cell-font-size: 13px;
+$border-width: 1px;
+$border-style: solid;
+$border-color: #dddddd;
+$input-border-color: $nancalui-brand;
+
+.#{$nancalui-prefix}-datepicker-container {
+  .input-container {
+    // border: 1px solid $input-border-color;
+    border-radius: $nancalui-border-radius;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .datepicker-input {
+    position: relative;
+    width: 100%;
+
+    input {
+      border: 0 solid #000000;
+      outline: none;
+      margin-right: 20px;
+    }
+  }
+
+  .datepicker-input-icon {
+    position: absolute;
+    z-index: 9;
+    right: 6px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .#{$nancalui-prefix}-datepicker-panel {
+    border: 1px solid #000000;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border-width: $border-width;
+    border-style: $border-style;
+    border-color: $border-color;
+    border-radius: $nancalui-border-radius-card;
+    box-shadow: $nancalui-shadow-length-base $nancalui-shadow;
+    background-color: $nancalui-base-bg;
+    font-size: $cell-font-size;
+    position: absolute;
+    z-index: 99;
+  }
+}

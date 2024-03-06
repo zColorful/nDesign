@@ -1,0 +1,128 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$font-size-map: (
+  lg: $nancalui-font-size-lg,
+  md: $nancalui-font-size-md,
+  sm: $nancalui-font-size-sm,
+);
+
+$tag-height-map: (
+  lg: 32px,
+  md: 28px,
+  sm: 24px,
+);
+
+$tag-line-height-map: (
+  lg: 30px,
+  md: 26px,
+  sm: 22px,
+);
+
+$nancalui-tag-normal-config: (
+  default: (
+    border: 0,
+    color: $nancalui-text,
+    background-color: $nancalui-default-bg,
+  ),
+  primary: (
+    color: $nancalui-primary,
+    background-color: $nancalui-initial,
+  ),
+  success: (
+    color: $nancalui-success,
+    background-color: $nancalui-success-bg,
+  ),
+  warning: (
+    color: $nancalui-warning,
+    background-color: $nancalui-warning-bg,
+  ),
+  danger: (
+    color: $nancalui-danger,
+    background-color: $nancalui-danger-bg,
+  ),
+  colorful: (
+    background-color: #ffffff,
+  ),
+  // deletable: (
+  //   padding-right: 22px,
+  // ),
+);
+$nancalui-tag-delete-config: (
+  default: (
+    background-color: $nancalui-text,
+  ),
+  primary: (
+    background-color: $nancalui-primary,
+  ),
+  success: (
+    background-color: $nancalui-success,
+  ),
+  warning: (
+    background-color: $nancalui-warning,
+  ),
+  danger: (
+    background-color: $nancalui-danger,
+  ),
+);
+.#{$nancalui-prefix}-tag {
+  display: inline-block;
+
+  .#{$nancalui-prefix}-tag__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 8px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: $nancalui-border-radius;
+    font-size: $nancalui-font-size-sm;
+    line-height: 20px;
+    @each $type in default, primary, success, warning, danger, colorful, deletable {
+      &.#{$nancalui-prefix}-tag--#{$type} {
+        @each $key, $value in map-get($nancalui-tag-normal-config, $type) {
+          #{$key}: $value;
+        }
+      }
+    }
+    @each $size in ('lg', 'md', 'sm') {
+      &.#{$nancalui-prefix}-tag--#{$size} {
+        font-size: map-get($font-size-map, #{$size});
+        height: map-get($tag-height-map, #{$size});
+        line-height: map-get($tag-line-height-map, #{$size});
+      }
+    }
+  }
+
+  .remove-button {
+    color: inherit;
+    display: inline-flex;
+    margin-left: 12px;
+    font-size: $nancalui-font-size-icon;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    // position: absolute;
+    // top: 50%;
+    // right: 10%;
+    // transform: translateY(-50%);
+    i {
+      /* 取消icon自带的偏移 */
+      vertical-align: 0;
+    }
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  @each $type in default, primary, success, warning, danger {
+    .#{$nancalui-prefix}-tag--#{$type} .remove-button:hover {
+      @each $key, $value in map-get($nancalui-tag-delete-config, $type) {
+        #{$key}: $value;
+      }
+    }
+  }
+}

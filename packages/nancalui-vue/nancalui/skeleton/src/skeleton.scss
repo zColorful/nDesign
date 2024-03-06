@@ -1,0 +1,19 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-skeleton {
+  width: 100%;
+
+  &__paragraph {
+    margin-bottom: 12px;
+
+    &:last-child {
+      width: 60%;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-skeleton-item.#{$nancalui-prefix}-skeleton__title {
+  width: 40%;
+  margin-bottom: 16px;
+}

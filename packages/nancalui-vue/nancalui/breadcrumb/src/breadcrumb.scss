@@ -1,0 +1,12 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-breadcrumb {
+  display: flex;
+  align-items: center;
+
+  .#{$nancalui-prefix}-breadcrumb__item:last-child {
+    .#{$nancalui-prefix}-breadcrumb__separator {
+      display: none;
+    }
+  }
+}

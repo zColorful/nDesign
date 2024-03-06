@@ -1,0 +1,76 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 8px;
+  color: var(--nancalui-text, #252b3a);
+  vertical-align: middle;
+  outline: none;
+  border: 1px solid $nancalui-form-control-line;
+  border-radius: $nancalui-border-radius;
+  background: $nancalui-form-control-bg;
+  transition: border-color 0.3s $nancalui-animation-ease-in-out-smooth;
+
+  &:not(.#{$nancalui-prefix}-textarea--error):not(.#{$nancalui-prefix}-textarea--disabled):not(.#{$nancalui-prefix}-textarea--focus):hover {
+    border-color: $nancalui-form-control-line-hover;
+  }
+
+  &--focus:not(.#{$nancalui-prefix}-textarea--error) {
+    border-color: $nancalui-form-control-line-active;
+  }
+
+  &--disabled {
+    border-color: $nancalui-disabled-line;
+    background-color: $nancalui-disabled-bg;
+    color: $nancalui-disabled-text;
+    cursor: not-allowed;
+
+    &:hover {
+      border-color: $nancalui-disabled-line;
+    }
+
+    .#{$nancalui-prefix}-textarea__inner {
+      color: $nancalui-disabled-text;
+      cursor: not-allowed;
+    }
+  }
+
+  &--noborder {
+    border: none;
+    background-color: $nancalui-form-control-bg;
+    color: #000;
+    cursor: not-allowed;
+
+    &:hover {
+      border: none;
+    }
+
+    .#{$nancalui-prefix}-textarea__inner {
+      color: #000;
+      cursor: not-allowed;
+    }
+  }
+  &--error {
+    border-color: $nancalui-danger-line;
+    background-color: $nancalui-danger-bg;
+  }
+  &__div {
+    position: relative;
+  }
+  &__show-count {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    text-align: right;
+    color: inherit;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: $nancalui-font-size;
+    line-height: 20px;
+  }
+
+  &--feedback {
+    padding-right: 28px;
+  }
+}

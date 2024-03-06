@@ -1,0 +1,25 @@
+
+.nancalui-err-modal{
+  &-title {
+    text-align: center;
+    font-size: 16px;
+    padding: 23px 0;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 26px;
+
+    i {
+      font-size: 26px;
+      color: #f52f3e;
+      margin-right: 7px;
+      vertical-align: middle;
+    }
+  }
+
+  &-content {
+    background: #f7f8fa;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    padding: 10px 16px;
+  }
+}

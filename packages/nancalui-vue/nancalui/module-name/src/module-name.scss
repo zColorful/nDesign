@@ -1,0 +1,41 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.module-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+
+  &.md {
+    .module-name-border {
+      height: 16px;
+    }
+
+    .module-name-text {
+      font-size: 16px;
+    }
+  }
+
+  &.lg {
+    .module-name-border {
+      height: 18px;
+    }
+
+    .module-name-text {
+      font-size: 18px;
+    }
+  }
+
+  &-border {
+    width: 4px;
+    height: 14px;
+    background-color: $nancalui-brand;
+    margin-right: 6px;
+  }
+
+  &-text {
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

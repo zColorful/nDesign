@@ -1,0 +1,17 @@
+@import '../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-flexible-overlay {
+  position: fixed;
+  border-radius: $nancalui-border-radius;
+  background-color: $nancalui-connected-overlay-bg;
+  box-shadow: $nancalui-shadow-length-connected-overlay $nancalui-shadow;
+  z-index: 1000;
+
+  &__arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg);
+    background-color: inherit;
+  }
+}

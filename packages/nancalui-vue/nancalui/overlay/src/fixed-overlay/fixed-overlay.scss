@@ -1,0 +1,21 @@
+@import '../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-fixed-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $nancalui-shadow;
+  z-index: 1050;
+}
+
+.#{$nancalui-prefix}-fixed-overlay--fade-enter-active,
+.#{$nancalui-prefix}-fixed-overlay--fade-leave-active {
+  transition: opacity 0.1s cubic-bezier(0, 0, 1, 1);
+}
+
+.#{$nancalui-prefix}-fixed-overlay--fade-enter-from,
+.#{$nancalui-prefix}-fixed-overlay--fade-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,108 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$nancalui-btn-sm-padding: var(--nancalui-btn-sm-padding, 0 14px);
+$nancalui-btn-padding: var(--nancalui-btn-padding, 0 16px);
+$nancalui-btn-lg-padding: var(--nancalui-btn-lg-padding, 0 20px);
+
+$font-size-map: (
+  lg: $nancalui-font-size-lg,
+  md: $nancalui-font-size-md,
+  sm: $nancalui-font-size-sm,
+);
+$radio-label-height-map: (
+  lg: $nancalui-size-lg,
+  md: $nancalui-size-md,
+  sm: $nancalui-size-sm,
+);
+$button-padding-map: (
+  lg: $nancalui-btn-lg-padding,
+  md: $nancalui-btn-padding,
+  sm: $nancalui-btn-sm-padding,
+);
+.#{$nancalui-prefix}-radio-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: $nancalui-btn-padding;
+  height: $nancalui-size-md;
+  font-size: $nancalui-font-size-md;
+  color: $nancalui-text;
+  cursor: pointer;
+  border: 1px solid $nancalui-line;
+  user-select: none;
+  @each $size in ('lg', 'md', 'sm') {
+    &.#{$nancalui-prefix}-radio-button--#{$size} {
+      font-size: map-get($font-size-map, #{$size});
+      padding: map-get($button-padding-map, #{$size});
+      height: map-get($radio-label-height-map, #{$size});
+      line-height: map-get($radio-label-height-map, #{$size});
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    pointer-events: none;
+  }
+
+  &.active {
+    color: #ffffff;
+    background-color: $nancalui-brand;
+    border-color: $nancalui-brand;
+
+    &.disabled {
+      color: #ffffff;
+      background-color: $nancalui-icon-fill-active-disabled;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $nancalui-disabled-text;
+    background-color: #ffffff;
+    border-color: $nancalui-disabled-line;
+  }
+}
+
+.#{$nancalui-prefix}-radio-group {
+  &.is-row {
+    .#{$nancalui-prefix}-radio-button {
+      border-left: none;
+
+      &:first-child {
+        border-top-left-radius: $nancalui-border-radius;
+        border-bottom-left-radius: $nancalui-border-radius;
+        border-left: 1px solid $nancalui-disabled-line;
+      }
+
+      &:last-child {
+        border-top-right-radius: $nancalui-border-radius;
+        border-bottom-right-radius: $nancalui-border-radius;
+      }
+    }
+  }
+
+  &.is-column {
+    .#{$nancalui-prefix}-radio-button {
+      width: 100%;
+      border-top: none;
+
+      &:first-child {
+        border-top-left-radius: $nancalui-border-radius;
+        border-top-right-radius: $nancalui-border-radius;
+        border-top: 1px solid $nancalui-disabled-line;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: $nancalui-border-radius;
+        border-bottom-right-radius: $nancalui-border-radius;
+      }
+    }
+  }
+}

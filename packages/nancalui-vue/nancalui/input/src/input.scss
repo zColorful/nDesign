@@ -1,0 +1,208 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-input {
+  width: 100%;
+  height: $nancalui-size-md;
+  font-size: $nancalui-font-size;
+
+  &__wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid $nancalui-input-border-color;
+    border-radius: $nancalui-border-radius;
+    background-color: $nancalui-form-control-bg;
+    transition: border-color 0.3s $nancalui-animation-ease-in-out-smooth;
+    height: 100%;
+
+    &:not(.#{$nancalui-prefix}-input--error):not(.#{$nancalui-prefix}-input--disabled):not(.#{$nancalui-prefix}-input--focus):hover {
+      border-color: $nancalui-primary-hover;
+    }
+  }
+
+  &--focus:not(.#{$nancalui-prefix}-input--error) {
+    border-color: $nancalui-primary-active;
+  }
+
+  &--line {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid $nancalui-disabled-line;
+  }
+
+  &--disabled {
+    color: $nancalui-disabled-text;
+    border-color: $nancalui-disabled-line;
+    background-color: $nancalui-disabled-bg;
+    cursor: not-allowed;
+
+    &:hover {
+      border-color: $nancalui-disabled-line;
+    }
+
+    .#{$nancalui-prefix}-input__inner {
+      color: $nancalui-disabled-text;
+      cursor: not-allowed;
+    }
+  }
+
+  &--noborder {
+    border: none;
+    background-color: $nancalui-form-control-bg;
+    cursor: not-allowed;
+
+    &:hover {
+      border: none;
+    }
+
+    .#{$nancalui-prefix}-input__inner {
+      color: #000000;
+      cursor: not-allowed;
+    }
+  }
+
+  &--error {
+    border-color: $nancalui-danger;
+  }
+
+  &--sm {
+    height: $nancalui-size-mini;
+    font-size: $nancalui-font-size-sm;
+
+    .#{$nancalui-prefix}-input__inner {
+      &::-webkit-input-placeholder {
+        font-size: $nancalui-font-size-sm;
+      }
+    }
+
+    .#{$nancalui-prefix}-input-slot__prepend,
+    .#{$nancalui-prefix}-input-slot__append {
+      padding: 0 8px;
+    }
+  }
+
+  &--lg {
+    height: $nancalui-size-lg;
+    font-size: $nancalui-font-size-lg;
+
+    .#{$nancalui-prefix}-input__inner {
+      &::-webkit-input-placeholder {
+        font-size: $nancalui-font-size-lg;
+      }
+    }
+
+    .#{$nancalui-prefix}-input-slot__prepend,
+    .#{$nancalui-prefix}-input-slot__append {
+      padding: 0 12px;
+    }
+  }
+
+  &--feedback {
+    padding-right: 28px;
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    color: #000000;
+    font-size: inherit;
+    padding: 4px 0;
+    border: none;
+    background: none;
+    outline: none;
+    box-sizing: border-box;
+
+    &::-webkit-input-placeholder {
+      font-size: 12px;
+      color: $nancalui-input-placeholder;
+    }
+  }
+
+  &--prepend {
+    .#{$nancalui-prefix}-input__wrapper {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &--append {
+    .#{$nancalui-prefix}-input__wrapper {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &-slot {
+    display: inline-flex;
+    width: 100%;
+    align-items: stretch;
+
+    &__prepend,
+    &__append {
+      color: var(--nancalui-text);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+      padding: 0 12px;
+      white-space: nowrap;
+      border: 1px solid $nancalui-input-border-color;
+      border-radius: $nancalui-border-radius;
+      background-color: $nancalui-form-control-bg;
+
+      .#{$nancalui-prefix}-button,
+      .#{$nancalui-prefix}-select .#{$nancalui-prefix}-select__selection {
+        border: none !important;
+        background-color: transparent !important;
+        color: inherit;
+      }
+
+      .#{$nancalui-prefix}-button,
+      .#{$nancalui-prefix}-select__selection {
+        margin: 0 -12px;
+      }
+    }
+
+    &__prepend {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &__append {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &__prefix,
+    &__suffix {
+      display: inline-flex;
+      white-space: nowrap;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    &__prefix {
+      > * {
+        margin-right: 8px;
+      }
+    }
+
+    &__suffix {
+      > * {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &__clear--icon,
+  &__password--icon {
+    cursor: pointer;
+  }
+}

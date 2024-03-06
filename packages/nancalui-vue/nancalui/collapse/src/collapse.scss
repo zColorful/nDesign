@@ -1,0 +1,125 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-collapse {
+  font-size: $nancalui-font-size;
+  background: $nancalui-base-bg;
+  width: 100%;
+  overflow-y: auto;
+  box-shadow: $nancalui-shadow-length-base $nancalui-shadow;
+}
+
+:host {
+  display: block;
+}
+
+.#{$nancalui-prefix}-collapse__item {
+  .#{$nancalui-prefix}-collapse--overflow-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.#{$nancalui-prefix}-collapse__item-title {
+  display: block;
+  height: 45px;
+  width: 100%;
+  padding: 0 28px 0 20px;
+  font-weight: 400;
+  line-height: 45px;
+  color: $nancalui-text;
+  background-color: $nancalui-base-bg;
+  cursor: pointer;
+
+  &.#{$nancalui-prefix}-collapse__item--disabled {
+    color: $nancalui-disabled-text;
+    cursor: not-allowed;
+  }
+
+  &:not(.#{$nancalui-prefix}-collapse__item--disabled) {
+    &:hover {
+      background: $nancalui-list-item-hover-bg;
+      color: $nancalui-list-item-hover-text;
+    }
+  }
+}
+
+/* 展开图标相关 */
+.#{$nancalui-prefix}-collapse__item > .#{$nancalui-prefix}-collapse__item-title {
+  position: relative;
+
+  & > .#{$nancalui-prefix}-collapse__open-icon {
+    display: inline-block;
+    text-indent: 0;
+    pointer-events: none; /* 让鼠标穿透 */
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    transition: transform ease-out 0.4s;
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      path {
+        fill: $nancalui-text-weak;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-collapse--open > .#{$nancalui-prefix}-collapse__open-icon {
+    transform: rotate(180deg);
+    transform-origin: center;
+  }
+}
+
+/* 展开内容相关 */
+.#{$nancalui-prefix}-collapse__item-content {
+  padding: 0 12px 0 20px;
+  line-height: 1.5;
+  color: $nancalui-text-weak;
+  border-bottom: 1px solid #e6ebf5;
+}
+
+/* 下拉收起相关 */
+.#{$nancalui-prefix}-collapse-transition-leave-active {
+  transition: all 0.4s ease-in-out;
+  animation: panelUpOut 0.4s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.#{$nancalui-prefix}-collapse-transition-enter-active {
+  transition: all 0.4s ease-in-out;
+  animation: panelUpIn 0.4s ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes panelUpOut {
+  0% {
+    transform: scaleY(1);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+}
+
+@keyframes panelUpIn {
+  0% {
+    transform: scaleY(0);
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleY(1);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}

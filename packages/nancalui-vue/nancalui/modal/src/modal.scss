@@ -1,0 +1,224 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-modal__fullscreen {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  z-index: $nancalui-z-index-modal;
+  overflow: hidden;
+  width:75%;
+
+  .btn-close {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+
+    &:hover {
+      color: $nancalui-icon-fill-active-hover;
+      background-color: $nancalui-list-item-hover-bg;
+    }
+
+    & i {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .#{$nancalui-prefix}-modal__title {
+    color: #ffffff;
+    opacity: 0;
+  }
+
+  .#{$nancalui-prefix}-modal__close {
+    width:18px;
+    height:18px;
+    border-radius:100px;
+    background: #ffffff;
+
+    svg{
+      width:12px;
+      height:12px;
+    }
+  }
+
+  .type-content {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+      line-height: 16px;
+    }
+
+    &-text {
+      font-weight: 700;
+      vertical-align: middle;
+      font-size: 16px;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  max-width: 1200px;
+  border-radius: 8px;
+  border: none;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  background-color: $nancalui-fullscreen-overlay-bg;
+  background-clip: padding-box;
+  outline: 0;
+  box-shadow: $nancalui-shadow-length-fullscreen-overlay $nancalui-shadow;
+  z-index: $nancalui-z-index-modal;
+
+  .btn-close {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    height: 20px;
+    line-height: 20px;
+    z-index: 999;
+    text-align: center;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+
+    &:hover {
+      color: $nancalui-icon-fill-active-hover;
+      background-color: $nancalui-list-item-hover-bg;
+    }
+
+    & i {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .type-content {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      margin-right: 8px;
+      width: 24px;
+      height: 24px;
+      line-height: 16px;
+    }
+
+    &-text {
+      font-weight: 700;
+      vertical-align: middle;
+      font-size: 16px;
+    }
+  }
+
+  &.nancalui-modal__isPadding {
+    .#{$nancalui-prefix}-modal__footer {
+      padding: 0 30px 20px 30px !important;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-modal-content {
+  background: $nancalui-fullscreen-overlay-bg;
+  border-radius: $nancalui-border-radius;
+}
+
+.#{$nancalui-prefix}-modal__header {
+  width: 100%;
+  font-size: $nancalui-font-size-card-title;
+  font-weight: bold;
+  // box-sizing: border-box;
+  border: none;
+  padding: 20px 30px 24px 30px;
+  cursor: pointer;
+  .#{$nancalui-prefix}-modal__title {
+    height: 22px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 16px;
+      border-left: 4px $nancalui-primary solid;
+      // padding-right: 4px;
+      margin-right: 10px;
+      position: relative;
+    }
+  }
+
+  .header-alert-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    line-height: 16px;
+    text-align: center;
+  }
+}
+
+.#{$nancalui-prefix}-modal__body {
+  font-size: $nancalui-font-size;
+  color: $nancalui-text-weak;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 30px 10px 30px;
+  max-height: 580px;
+}
+
+.#{$nancalui-prefix}-modal__footer {
+  width: 100%;
+  text-align: right;
+  padding: 20px 30px;
+  box-sizing: border-box;
+
+  & > * {
+    margin: 0 4px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-modal--wipe {
+  &-enter-active {
+    transition: opacity 0.1s cubic-bezier(0.16, 0.75, 0.5, 1), top 0.1s cubic-bezier(0, 0, 1, 1);
+  }
+
+  &-leave-active {
+    transition: opacity 0.1s cubic-bezier(0.5, 0, 0.84, 0.25), top 0.1s cubic-bezier(0, 0, 1, 1);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0.2;
+    top: calc(50% - 24px);
+  }
+}

@@ -1,0 +1,108 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-dropdown span {
+  &.icon-chevron-down,
+  &.icon-select-arrow {
+    display: inline-block;
+    vertical-align: text-top;
+  }
+}
+.page-dropDown{
+  z-index: var(--nancalui-z-index-function-widget, 9999) !important;
+}
+
+.#{$nancalui-prefix}-dropdown__menu-wrap .#{$nancalui-prefix}-dropdown-menu {
+  width: 100%;
+}
+
+.#{$nancalui-prefix}-dropdown-animation span {
+  &.icon-chevron-down,
+  &.icon-select-arrow {
+    transition: transform $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+  }
+}
+
+.#{$nancalui-prefix}-dropdown.open span {
+  &.icon-chevron-down,
+  &.icon-select-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+.fade-in-top {
+  animation: fadeInTop 0.2s cubic-bezier(0.16, 0.75, 0.5, 1);
+}
+
+.fade-in-bottom {
+  animation: fadeInBottom 0.2s cubic-bezier(0.16, 0.75, 0.5, 1);
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0.8;
+    transform: scaleY(0.8) translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(0.9999) translateY(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0.8;
+    transform: scaleY(0.8) translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(0.9999) translateY(0);
+  }
+}
+
+.#{$nancalui-prefix}-dropdown--fade {
+  &-bottom {
+    &-enter-from,
+    &-leave-to {
+      opacity: 0.8;
+      transform: scaleY(0.8) translateY(-4px);
+    }
+
+    &-enter-to,
+    &-leave-from {
+      opacity: 1;
+      transform: scaleY(0.9999) translateY(0);
+    }
+
+    &-enter-active {
+      transition: transform 0.2s cubic-bezier(0.16, 0.75, 0.5, 1), opacity 0.2s cubic-bezier(0.16, 0.75, 0.5, 1);
+    }
+
+    &-leave-active {
+      transition: transform 0.2s cubic-bezier(0.5, 0, 0.84, 0.25), opacity 0.2s cubic-bezier(0.5, 0, 0.84, 0.25);
+    }
+  }
+
+  &-top {
+    &-enter-from,
+    &-leave-to {
+      opacity: 0.8;
+      transform: scaleY(0.8) translateY(4px);
+    }
+
+    &-enter-to,
+    &-leave-from {
+      opacity: 1;
+      transform: scaleY(0.9999) translateY(0);
+    }
+
+    &-enter-active {
+      transition: transform 0.2s cubic-bezier(0.16, 0.75, 0.5, 1), opacity 0.2s cubic-bezier(0.16, 0.75, 0.5, 1);
+    }
+
+    &-leave-active {
+      transition: transform 0.2s cubic-bezier(0.5, 0, 0.84, 0.25), opacity 0.2s cubic-bezier(0.5, 0, 0.84, 0.25);
+    }
+  }
+}

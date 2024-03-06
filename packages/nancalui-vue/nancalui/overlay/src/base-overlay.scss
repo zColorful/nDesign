@@ -1,0 +1,35 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-overlay__fade {
+  @mixin n-overlay-fade-animation {
+    animation-name: n-overlay-fade;
+    animation-duration: 0.3s;
+  }
+  @keyframes n-overlay-fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    @include n-overlay-fade-animation;
+  }
+
+  &-leave {
+    opacity: 1;
+  }
+
+  &-leave-active {
+    @include n-overlay-fade-animation;
+
+    animation-direction: reverse;
+  }
+}

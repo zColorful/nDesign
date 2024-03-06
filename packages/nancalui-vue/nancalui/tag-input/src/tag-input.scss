@@ -1,0 +1,203 @@
+@import '../../styles-var/nancalui-var.scss';
+
+:host {
+  display: block;
+  outline: none;
+}
+
+.#{$nancalui-prefix}-tag-input {
+  position: relative;
+  height: 100%;
+  outline: none;
+
+  &:active {
+    outline: 0;
+  }
+}
+
+.#{$nancalui-prefix}-form-control.#{$nancalui-prefix}-tags {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  padding: 2px 4px;
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: text;
+  background-color: $nancalui-base-bg;
+  border: 1px solid $nancalui-line;
+  border-radius: $nancalui-border-radius;
+  height: 100%;
+  transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &:hover {
+    border-color: $nancalui-list-item-hover-bg;
+  }
+
+  &.focused {
+    outline: 0;
+  }
+
+  &.#{$nancalui-prefix}-dropdown-origin:focus-within {
+    border-color: $nancalui-brand;
+  }
+
+  .#{$nancalui-prefix}-tag-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .#{$nancalui-prefix}-tag-item {
+    margin: 1px;
+    padding: 0 10px;
+    display: inline-block;
+    min-height: 18px;
+    line-height: 18px;
+    border-radius: $nancalui-border-radius;
+    color: $nancalui-text;
+    background-color: $nancalui-label-bg;
+    position: relative;
+    border: 1px solid $nancalui-label-bg;
+
+    span {
+      line-height: 1.5;
+      margin-right: 25px;
+    }
+
+    .remove-button {
+      margin: 0 0 0 12px;
+      padding: 0;
+      border: none;
+      vertical-align: top;
+      font-size: $nancalui-font-size-page-title;
+      border-radius: 50%;
+      background-color: $nancalui-line;
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      line-height: 12px;
+      text-align: center;
+      transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+      right: 10px;
+
+      svg path {
+        fill: $nancalui-light-text; //TODO: Color-Question
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &:not(.#{$nancalui-prefix}-disabled) {
+    .#{$nancalui-prefix}-tag-item {
+      cursor: pointer;
+
+      span {
+        &:hover {
+          color: $nancalui-list-item-hover-text;
+        }
+      }
+
+      .remove-button {
+        &:hover {
+          background-color: $nancalui-list-item-hover-text;
+        }
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-disabled {
+    border-color: $nancalui-disabled-line;
+    background-color: $nancalui-disabled-bg;
+    cursor: not-allowed;
+
+    .#{$nancalui-prefix}-tag-item {
+      color: $nancalui-disabled-text;
+      background-color: $nancalui-disabled-bg;
+      border-color: $nancalui-disabled-line;
+
+      span {
+        margin-right: 0;
+      }
+
+      .remove-button {
+        background-color: $nancalui-disabled-line;
+
+        svg path {
+          fill: $nancalui-light-text;
+        }
+      }
+    }
+
+    .#{$nancalui-prefix}-tag-list {
+      min-height: 22px;
+    }
+  }
+
+  input.#{$nancalui-prefix}-input {
+    border: 0;
+    outline: 0;
+    float: left;
+    width: 100%;
+    height: 22px;
+    font-size: $nancalui-font-size;
+    padding-left: 5px;
+
+    &::-ms-clear {
+      display: none;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-tags-autocomplete {
+  width: 100%;
+  padding: 8px;
+  border-radius: $nancalui-border-radius;
+  background-color: $nancalui-connected-overlay-bg;
+  box-shadow: $nancalui-shadow-length-connected-overlay $nancalui-shadow;
+
+  .#{$nancalui-prefix}-suggestion-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    max-height: 280px;
+    overflow-y: auto;
+    position: relative;
+
+    .#{$nancalui-prefix}-suggestion-item {
+      padding: 5px 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: $nancalui-font-size;
+      line-height: 20px;
+      border-radius: $nancalui-border-radius;
+
+      &:not(.#{$nancalui-prefix}-disabled) {
+        cursor: pointer;
+        color: $nancalui-text;
+        // background-color: $nancalui-base-bg;
+        &:hover {
+          background-color: $nancalui-list-item-hover-bg;
+        }
+
+        &.selected {
+          color: $nancalui-brand;
+          background-color: $nancalui-list-item-active-bg;
+        }
+      }
+    }
+  }
+}
+
+.#{$nancalui-prefix}-tags-autocomplete {
+  .#{$nancalui-prefix}-suggestion-list {
+    .#{$nancalui-prefix}-suggestion-item {
+      transition: color $nancalui-animation-duration-fast $nancalui-animation-ease-in-smooth,
+        background-color $nancalui-animation-duration-fast $nancalui-animation-ease-in-smooth;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+//圆角变量
+
+$nancalui-border-radius: var(--nancalui-border-radius, 2px); //一般圆角
+$nancalui-border-radius-feedback: var(--nancalui-border-radius-feedback, 4px); //反馈类圆角
+$nancalui-border-radius-card: var(--nancalui-border-radius-card, 6px); //卡片圆角

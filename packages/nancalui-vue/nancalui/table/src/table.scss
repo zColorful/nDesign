@@ -1,0 +1,158 @@
+@import '../../styles-var/nancalui-var.scss';
+$nancalui-table-line: var(--nancalui-table-line);
+$nancalui-table-bg: var(--nancalui-table-bg);
+.#{$nancalui-prefix}-table {
+  position: relative;
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+
+  .hidden-columns {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  // fix v-dLoading can't completely covered
+  &__container {
+    flex: 1;
+    overflow: auto;
+  }
+
+  &__view {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--striped {
+    tbody tr:nth-child(even) {
+      background-color: $nancalui-table-bg;
+    }
+  }
+
+  &__empty {
+    padding-top: 80px;
+    background-color: $nancalui-base-bg;
+    text-align: center;
+  }
+
+  &__fix-header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
+
+  &__fix-header > &__header-wrapper {
+    position: sticky;
+    top: 0;
+  }
+
+  &__scroll-view {
+    flex: 1;
+  }
+
+  &--layout-auto {
+    table-layout: auto;
+  }
+
+  &--sm {
+    tbody > tr > td {
+      font-size: $nancalui-font-size-sm;
+      // padding: 7px 20px 8px;
+      // &.is-left:first-child {
+      //   padding: 7px 20px 8px 30px;
+      // }
+
+      // &.#{$nancalui-prefix}-table__checkable-cell {
+      //   padding: 8px;
+      // }
+    }
+
+    // thead > tr > th.#{$nancalui-prefix}-table__checkable-cell {
+    //   padding: 8px;
+    // }
+  }
+
+  &--md {
+    tbody > tr > td {
+      font-size: $nancalui-font-size-md;
+      padding: 0 20px;
+      height: 40px;
+
+      &.is-left:last-child {
+        padding: 0 8px 0 20px;
+      }
+    }
+    // thead > tr > th.#{$nancalui-prefix}-table__checkable-cell {
+    //   padding: 8px 20px;
+    // }
+  }
+
+  &--lg {
+    tbody > tr > td {
+      font-size: $nancalui-font-size-lg;
+      padding: 17px 20px 18px;
+
+      &.is-left:first-child {
+        padding: 17px 20px 18px 30px;
+      }
+    }
+
+    // thead > tr > th.#{$nancalui-prefix}-table__checkable-cell {
+    //   padding: 8px 20px;
+    // }
+  }
+
+  &--borderless {
+    tbody > tr > td {
+      border-bottom: none;
+    }
+  }
+
+  &--bordered {
+    tr {
+      border-left: 1px solid $nancalui-table-line;
+
+      td {
+        border-right: 1px solid $nancalui-table-line;
+      }
+    }
+
+    thead {
+      tr {
+        th:first-child {
+          border-left: 1px solid $nancalui-table-line;
+        }
+
+        th {
+          border-top: 1px solid $nancalui-table-line;
+          border-right: 1px solid $nancalui-table-line;
+        }
+      }
+    }
+  }
+
+  .resize-bar {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: $nancalui-form-control-line-active;
+    z-index: $nancalui-z-index-function-widget;
+    cursor: col-resize;
+  }
+}
+
+.table-selector {
+  user-select: none;
+  cursor: col-resize;
+}

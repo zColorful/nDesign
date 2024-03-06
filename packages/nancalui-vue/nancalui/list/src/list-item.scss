@@ -1,0 +1,25 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-list-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 8px;
+  color: $nancalui-text;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: color $nancalui-animation-duration-fast $nancalui-animation-ease-in-out-smooth,
+    background-color $nancalui-animation-duration-fast $nancalui-animation-ease-in-out-smooth;
+
+  &:hover {
+    color: $nancalui-list-item-hover-text;
+    background-color: $nancalui-list-item-hover-bg;
+  }
+
+  &:active {
+    color: $nancalui-list-item-active-text;
+    background-color: $nancalui-list-item-active-bg;
+  }
+}

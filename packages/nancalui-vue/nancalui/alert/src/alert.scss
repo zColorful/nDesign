@@ -1,0 +1,195 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-alert {
+  color: $nancalui-text;
+  font-size: $nancalui-font-size;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  line-height: 24px;
+  border-radius: $nancalui-border-radius;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &.#{$nancalui-prefix}-alert--center {
+    justify-content: center;
+  }
+
+  .#{$nancalui-prefix}-alert__content {
+    display: flex;
+    padding: 0 16px 0 4px;
+    word-break: normal;
+    word-wrap: break-word;
+  }
+
+  .#{$nancalui-prefix}-alert__close-icon {
+    color: $nancalui-text;
+    opacity: 1;
+    line-height: 26px;
+    height: 24px;
+    position: absolute;
+    right: 16px;
+    top: 8px;
+
+    & > svg path {
+      fill: $nancalui-light-text;
+    }
+
+    span {
+      color: $nancalui-text;
+      font-size: $nancalui-font-size;
+      font-weight: bold;
+    }
+  }
+
+  &.#{$nancalui-prefix}-alert--success {
+    background-color: $nancalui-success-bg;
+    border-color: $nancalui-success-line;
+    color: $nancalui-text;
+
+    .#{$nancalui-prefix}-alert__close-icon {
+      & > svg path {
+        fill: $nancalui-success-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-alert--info {
+    background-color: $nancalui-info-bg;
+    border-color: $nancalui-info-line;
+    color: $nancalui-text;
+
+    .#{$nancalui-prefix}-alert__close-icon {
+      & > svg path {
+        fill: $nancalui-info-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-alert--warning {
+    background-color: $nancalui-warning-bg;
+    border-color: $nancalui-warning-line;
+    color: $nancalui-text;
+
+    .#{$nancalui-prefix}-alert__close-icon {
+      & > svg path {
+        fill: $nancalui-warning-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-alert--danger {
+    background-color: $nancalui-danger-bg;
+    border-color: $nancalui-danger-line;
+    color: $nancalui-text;
+
+    .#{$nancalui-prefix}-alert__close-icon {
+      & > svg path {
+        fill: $nancalui-danger-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-alert--simple {
+    border-color: $nancalui-line;
+    color: $nancalui-text;
+
+    .#{$nancalui-prefix}-alert__close-icon {
+      & > svg path {
+        fill: $nancalui-text-weak;
+      }
+    }
+  }
+
+  svg.#{$nancalui-prefix}-alert__icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    transform: translateY(-1px); //字体14px图标16px对齐问题，微调
+  }
+
+  .#{$nancalui-prefix}-alert__icon.#{$nancalui-prefix}-alert__icon--success {
+    & > g {
+      path {
+        fill: $nancalui-success-line;
+      }
+
+      polygon {
+        fill: $nancalui-light-text;
+        stroke: $nancalui-light-text;
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-alert__icon.#{$nancalui-prefix}-alert__icon--warning {
+    & > g {
+      path.warning-outer {
+        fill: $nancalui-warning-line;
+      }
+
+      path.warning-inner {
+        fill: $nancalui-light-text;
+        stroke: $nancalui-light-text;
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-alert__icon.#{$nancalui-prefix}-alert__icon--info {
+    & > g {
+      path.info-outer {
+        fill: $nancalui-info-line;
+      }
+
+      path.info-inner {
+        fill: $nancalui-light-text;
+        stroke: $nancalui-light-text;
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-alert__icon.#{$nancalui-prefix}-alert__icon--error {
+    & > g {
+      path.error-outer {
+        fill: $nancalui-danger-line;
+      }
+
+      path.error-inner {
+        fill: $nancalui-light-text;
+        stroke: $nancalui-light-text;
+      }
+    }
+  }
+}
+
+.#{$nancalui-prefix}-alert__icon-wrap {
+  margin-right: 4px;
+}
+
+.#{$nancalui-prefix}-alter--close {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transform-origin: 50% 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.#{$nancalui-prefix}-alert-leave-active {
+  animation: alertUpOut 0.3s ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes alertUpOut {
+  0% {
+    transform: scaleY(1);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+}

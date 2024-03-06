@@ -1,0 +1,111 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$nancalui-icon-background-hover: var(--nancalui-icon-background-hover, $nancalui-list-item-hover-bg);
+$nancalui-icon-background-active: var(--nancalui-icon-background-active, $nancalui-list-item-active-bg);
+
+.#{$nancalui-prefix}-icon {
+  &__container {
+    display: inline-block;
+    color: $nancalui-icon-fill;
+
+    & > *:not(:last-child) {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    i {
+      vertical-align: middle;
+      transition: all $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+    }
+  }
+
+  &--no-slots {
+    i {
+      display: block;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  &--disabled {
+    color: $nancalui-disabled-text;
+    cursor: not-allowed;
+
+    i {
+      color: $nancalui-disabled-text;
+    }
+  }
+
+  &--operable {
+    &:not(.#{$nancalui-prefix}-icon--disabled) {
+      cursor: pointer;
+      transition: color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+
+      i {
+        cursor: pointer;
+      }
+    }
+
+    &:hover:not(.#{$nancalui-prefix}-icon--disabled) {
+      color: $nancalui-icon-fill-hover;
+
+      &.#{$nancalui-prefix}-icon__container {
+        background-color: $nancalui-icon-background-hover;
+      }
+
+      i {
+        color: $nancalui-icon-fill-hover;
+      }
+    }
+
+    &:active:not(.#{$nancalui-prefix}-icon--disabled) {
+      color: var(--nancalui-icon-active-color, $nancalui-icon-fill-active);
+
+      &.#{$nancalui-prefix}-icon__container {
+        background-color: $nancalui-icon-background-active;
+      }
+
+      i {
+        color: var(--nancalui-icon-active-color, $nancalui-icon-fill-active);
+      }
+    }
+
+    &.#{$nancalui-prefix}-icon__container {
+      height: 32px;
+      line-height: 32px;
+      padding: 0 8px;
+      margin-left: -8px;
+      border-radius: $nancalui-border-radius;
+      transition: all $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+    }
+  }
+
+  &--spin {
+    animation: iconSpin 2.5s linear infinite;
+  }
+}
+
+.#{$nancalui-prefix}-svg-icon {
+  fill: currentColor;
+  vertical-align: middle;
+  color: currentColor;
+  margin-right: 2px;
+  position: relative;
+  top: -2px;
+}
+
+@keyframes iconSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

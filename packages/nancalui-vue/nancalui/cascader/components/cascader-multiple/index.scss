@@ -1,0 +1,29 @@
+@import '../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-tags {
+  &-input {
+    flex: 1;
+    padding: 1px 20px 1px 4px;
+    border: 1px solid $nancalui-form-control-line;
+    border-radius: $nancalui-border-radius;
+    outline: none;
+    background-color: $nancalui-base-bg;
+    transition: border-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &-box {
+    width: 100%;
+    overflow: auto;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &-placeholder {
+    font-size: $nancalui-font-size;
+    line-height: 22px;
+    margin-left: 6px;
+    color: $nancalui-placeholder;
+  }
+}

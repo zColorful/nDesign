@@ -1,0 +1,32 @@
+$leftWidth: var(--lwidth, 210px);
+$rightWidth: var(--rwidth, calc(100% - 217px));
+
+.container {
+  &-main {
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+
+    // background: #e1e1e1;
+  }
+
+  &-left {
+    width: $leftWidth;
+    height: 100%;
+    overflow: hidden;
+    // transition: width 0.5s;
+    // padding: 2px 0 2px 2px;
+  }
+
+  &-right {
+    width: $rightWidth;
+    overflow: hidden;
+    position: relative;
+    // border-left: 1px solid #ebebeb;
+    height: 100%;
+  }
+}

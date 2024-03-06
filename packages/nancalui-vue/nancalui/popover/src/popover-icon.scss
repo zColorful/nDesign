@@ -1,0 +1,48 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-popover__icon-wrap {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+
+  .#{$nancalui-prefix}-popover__icon.#{$nancalui-prefix}-popover__icon--success > g {
+    & > path {
+      fill: $nancalui-success;
+    }
+
+    & > circle,
+    & > polygon {
+      fill: $nancalui-light-text;
+    }
+  }
+
+  .#{$nancalui-prefix}-popover__icon.#{$nancalui-prefix}-popover__icon--warning > g {
+    & > path {
+      fill: $nancalui-warning;
+    }
+
+    & > polygon {
+      fill: $nancalui-light-text;
+    }
+  }
+
+  .#{$nancalui-prefix}-popover__icon.#{$nancalui-prefix}-popover__icon--info > g {
+    & > g {
+      fill: $nancalui-info;
+    }
+
+    & > circle {
+      fill: $nancalui-light-text;
+    }
+  }
+
+  .#{$nancalui-prefix}-popover__icon.#{$nancalui-prefix}-popover__icon--error > g {
+    & > path {
+      fill: $nancalui-danger;
+    }
+
+    & > circle {
+      fill: $nancalui-light-text;
+    }
+  }
+}

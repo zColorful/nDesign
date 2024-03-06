@@ -1,0 +1,188 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$font-size-map: (
+  lg: $nancalui-font-size-lg,
+  md: $nancalui-font-size-md,
+  sm: $nancalui-font-size-sm,
+);
+$radio-width-map: (
+  lg: 18px,
+  md: 16px,
+  sm: 14px,
+);
+$radio-label-height-map: (
+  lg: $nancalui-size-lg,
+  md: $nancalui-size-md,
+  sm: $nancalui-size-sm,
+);
+
+.#{$nancalui-prefix}-radio {
+  font-size: $nancalui-font-size;
+  line-height: 1.5;
+  font-weight: normal;
+  cursor: pointer;
+  color: $nancalui-text;
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &:hover {
+    .#{$nancalui-prefix}-radio__label {
+      color: $nancalui-primary-hover;
+    }
+  }
+
+  &.active {
+    .#{$nancalui-prefix}-radio__material-outer {
+      opacity: 1;
+      stroke: $nancalui-primary;
+      transition: stroke 50ms $nancalui-animation-ease-in-out;
+
+      &.disabled {
+        stroke: $nancalui-icon-fill-active-disabled;
+        fill: transparent;
+      }
+    }
+
+    .#{$nancalui-prefix}-radio__material-inner {
+      opacity: 1;
+      transform: scale(1);
+      transition: transform $nancalui-animation-duration-base $nancalui-animation-ease-in-out,
+        opacity $nancalui-animation-duration-base $nancalui-animation-ease-in-out;
+
+      &.disabled {
+        fill: $nancalui-icon-fill-active-disabled;
+      }
+    }
+
+    &.#{$nancalui-prefix}-radio--bordered {
+      border-color: $nancalui-primary;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    /* 选择图标-外圈 */
+    .#{$nancalui-prefix}-radio__material-outer {
+      stroke: $nancalui-disabled-line !important;
+      fill: $nancalui-disabled-bg;
+    }
+
+    /* 选择图标-内圈 */
+    .#{$nancalui-prefix}-radio__material-inner {
+      fill: $nancalui-disabled-text !important;
+    }
+
+    .#{$nancalui-prefix}-radio__label {
+      color: $nancalui-disabled-text !important;
+    }
+
+    &.#{$nancalui-prefix}-radio--bordered {
+      border-color: $nancalui-disabled-line !important;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    .#{$nancalui-prefix}-radio__material-outer {
+      stroke: $nancalui-icon-fill-active-hover;
+    }
+
+    .#{$nancalui-prefix}-radio__material-inner {
+      fill: $nancalui-icon-fill-active-hover;
+    }
+  }
+
+  &:active {
+    .#{$nancalui-prefix}-radio__material-outer {
+      stroke: $nancalui-primary-active;
+    }
+
+    .#{$nancalui-prefix}-radio__material-inner {
+      fill: $nancalui-primary-active;
+    }
+  }
+
+  /* 选择图标-容器 */
+  &__material {
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 16px;
+    width: 16px;
+    line-height: 16px;
+    user-select: none;
+  }
+
+  /* 选择图标-外圈 */
+  &__material-outer {
+    opacity: 1;
+    transition: stroke 50ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    stroke: $nancalui-line;
+    fill: transparent;
+  }
+
+  /* 选择图标-内圈 */
+  &__material-inner {
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: 50% 50%;
+    transition: transform 200ms cubic-bezier(0.755, 0.05, 0.855, 0.06), opacity 200ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    fill: $nancalui-primary;
+  }
+
+  /* 内容 */
+  &__label {
+    color: $nancalui-text;
+    margin-left: 8px;
+    font-size: $nancalui-font-size;
+    transition: color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out;
+    line-height: 1;
+  }
+
+  &__input {
+    opacity: 0;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    display: none;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  &--bordered {
+    border: 1px solid $nancalui-disabled-line;
+    border-radius: $nancalui-border-radius;
+    padding: 0 15px 0 10px;
+  }
+
+  @each $size in ('lg', 'md', 'sm') {
+    &.#{$nancalui-prefix}-radio--#{$size} {
+      display: flex;
+      align-items: center;
+
+      .#{$nancalui-prefix}-radio__label {
+        font-size: map-get($font-size-map, #{$size});
+      }
+
+      .#{$nancalui-prefix}-radio__material {
+        width: map-get($radio-width-map, #{$size});
+        height: map-get($radio-width-map, #{$size});
+
+        &>svg {
+          width: map-get($radio-width-map, #{$size});
+          height: map-get($radio-width-map, #{$size});
+        }
+      }
+
+      &.#{$nancalui-prefix}-radio--bordered {
+        height: map-get($radio-label-height-map, #{$size});
+      }
+    }
+  }
+}

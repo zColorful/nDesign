@@ -1,0 +1,145 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-message {
+  position: fixed;
+  z-index: $nancalui-z-index-message;
+  padding: 10px 15px;
+  border-radius: $nancalui-border-radius-feedback;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  display: flex;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $nancalui-line;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+  background-color: $nancalui-base-bg;
+  transition: top 0.5s ease;
+
+  &--success {
+    background-color: $nancalui-success-bg;
+    border-color: $nancalui-success-line;
+
+    .#{$nancalui-prefix}-message__close {
+      .nancalui-icon__container {
+        color: $nancalui-success;
+      }
+    }
+  }
+
+  &--info {
+    background-color: $nancalui-info-bg;
+    border-color: $nancalui-info-line;
+
+    .#{$nancalui-prefix}-message__close {
+      .nancalui-icon__container {
+        color: $nancalui-info;
+      }
+    }
+  }
+
+  &--warning {
+    background-color: $nancalui-warning-bg;
+    border-color: $nancalui-warning-line;
+
+    .#{$nancalui-prefix}-message__close {
+      .nancalui-icon__container {
+        color: $nancalui-warning;
+      }
+    }
+  }
+
+  &--error {
+    background-color: $nancalui-danger-bg;
+    border-color: $nancalui-danger-line;
+
+    .#{$nancalui-prefix}-message__close {
+      .nancalui-icon__container {
+
+        color: $nancalui-danger;
+      }
+    }
+  }
+}
+
+.#{$nancalui-prefix}-message__close {
+  margin-left: auto;
+  padding-left: 10px;
+
+  .nancalui-icon__container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+}
+
+// 图标样式
+.#{$nancalui-prefix}-message__image {
+  margin-top: 1px;
+  display: inline-block;
+  width: $nancalui-font-size-icon;
+  min-width: $nancalui-font-size-icon;
+  min-height: $nancalui-font-size-icon;
+  height: $nancalui-font-size-icon;
+  padding: 0;
+  line-height: 1;
+  margin-right: 10px;
+
+  &--success {
+    color: $nancalui-success;
+  }
+
+  &--info {
+    color: $nancalui-info;
+  }
+
+  &--warning {
+    color: $nancalui-warning;
+  }
+
+  &--error {
+    color: $nancalui-danger;
+  }
+}
+
+// 消息文本内容
+.#{$nancalui-prefix}-message__content {
+  font-size: $nancalui-font-size-message;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
+  &--success {
+    color: $nancalui-success;
+  }
+
+  &--info {
+    color: $nancalui-info;
+  }
+
+  &--warning {
+    color: $nancalui-warning;
+  }
+
+  &--error {
+    color: $nancalui-danger;
+  }
+}
+
+.message-fade {
+
+  &-enter-active,
+  &-leave-active {
+    transform: translate(-50%, 0);
+    transition: all 0.5s ease;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translate(-50%, -200%);
+  }
+}

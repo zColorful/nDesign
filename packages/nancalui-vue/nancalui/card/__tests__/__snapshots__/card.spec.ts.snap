@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card should render correctly 1`] = `
+<div
+  class="card-container nancalui-card nancalui-card__shadow--hover"
+>
+  <!---->
+  <div
+    class="nancalui-card__header"
+  >
+    
+    <div>
+      <div
+        class="nancalui-card__title"
+      >
+        <!---->
+      </div>
+      <div
+        class="nancalui-card__subtitle"
+      >
+        <!---->
+      </div>
+    </div>
+  </div>
+  
+  <div
+    class="nancalui-card__content"
+  >
+    <!---->
+  </div>
+  <div
+    class="nancalui-card__actions"
+  >
+    
+  </div>
+</div>
+`;

@@ -1,0 +1,138 @@
+// Color 颜色
+
+@import './basic';
+
+// 基础变量
+$nancalui-global-bg: var(--nancalui-global-bg, $nancalui-zinc-5); // 全局带底色背景
+$nancalui-global-bg-normal: var(--nancalui-global-bg-normal, $nancalui-white-5); // 全局白色背景
+$nancalui-base-bg: var(--nancalui-base-bg, $nancalui-white-5); // 基础区块背景白色
+$nancalui-base-bg-dark: var(--nancalui-base-bg-dark, $nancalui-slate-100); // 基础区块背景深色(固定)
+$nancalui-brand: var(--nancalui-brand, $nancalui-blue-50); // 品牌色
+$nancalui-brand-foil: var(--nancalui-brand-foil, $nancalui-zinc-10); // 品牌色辅助色、正衬色
+$nancalui-brand-hover: var(--nancalui-primary-hover, $nancalui-blue-40); // 品牌色高亮色（加亮）
+$nancalui-brand-active: var(--nancalui-brand-active, $nancalui-blue-50); // 品牌色激活色（加深）
+$nancalui-brand-active-focus: var(--nancalui-brand-active-focus, $nancalui-blue-90); // 品牌色焦点色（重度加深）
+$nancalui-contrast: var(--nancalui-contrast, #f63838); // 品牌色撞色、对比色、反衬色、第二品牌色
+$nancalui-text: var(--nancalui-text, $nancalui-slate-100); // 正文文本
+$nancalui-text-weak: var(--nancalui-text-weak, $nancalui-slate-70); // 弱化的正文信息（手风琴子项，表头）
+$nancalui-aide-text: var(--nancalui-aide-text, $nancalui-slate-100); // 辅助文本、帮助信息（面包屑）
+$nancalui-aide-text-hover: var(--nancalui-aide-text-hover, $nancalui-slate-100); // 辅助文本悬浮色，用于标签文本悬浮等场景
+$nancalui-aide-text-stress: var(--nancalui-aide-text-stress, $nancalui-slate-80); // 辅助文本、帮助信息里的强调色
+$nancalui-placeholder: var(--nancalui-placeholder, $nancalui-slate-50); // 占位符
+$nancalui-light-text: var(--nancalui-light-text, $nancalui-white-5); // 有色深色背景下字体颜色（固定）
+$nancalui-dark-text: var(--nancalui-dark-text, $nancalui-slate-100); // 有色浅色背景下字体颜色（固定）
+$nancalui-link: var(--nancalui-link, $nancalui-blue-60); // 链接文本颜色
+$nancalui-link-active: var(--nancalui-link-active, $nancalui-blue-60); // 链接文本悬停/激活颜色
+$nancalui-link-light: var(--nancalui-link-light, $nancalui-blue-30); // 深色背景下链接文本颜色
+$nancalui-link-light-active: var(--nancalui-link-light-active, $nancalui-blue-20); // 深色背景下链接文本悬停/激活颜色
+$nancalui-line: var(--nancalui-line, $nancalui-slate-30); // 边框分割线，仅用于边框
+$nancalui-dividing-line: var(--nancalui-dividing-line, $nancalui-zinc-10); // 内容分割线，用于内容之间的分割
+$nancalui-block: var(--nancalui-block, $nancalui-white-5); // 大面积的不可折叠区块的背景色（例如顶部导航背景色）
+$nancalui-area: var(--nancalui-area, #f8f8f8); // 可折叠区块的背景色（展开区域颜色）
+$nancalui-danger: var(--nancalui-danger, $nancalui-red-50); // 失败、错误、告警
+$nancalui-warning: var(--nancalui-warning, $nancalui-yellow-50); // 警告、需注意类型提示
+$nancalui-waiting: var(--nancalui-waiting, #9faad7); // 等待中
+$nancalui-success: var(--nancalui-success, $nancalui-green-50); // 成功、正确
+$nancalui-info: var(--nancalui-info, $nancalui-blue-50); // 通知、一般提示、执行中
+$nancalui-initial: var(--nancalui-initial, $nancalui-blue-10); // 初始化、未执行
+$nancalui-unavailable: var(--nancalui-unavailable, $nancalui-gray-5); // 不可用、禁用状态
+$nancalui-shadow: var(--nancalui-shadow, rgba(37, 43, 58, 0.2)); // 阴影色
+$nancalui-light-shadow: var(--nancalui-light-shadow, rgba(37, 43, 58, 0.1)); // 弱化阴影色
+$nancalui-connected-overlay-shadow: var(--nancalui-connected-overlay-shadow, rgba(37, 43, 58, 0.12)); // 下拉菜单类阴影色
+$nancalui-feedback-overlay-shadow: var(--nancalui-feedback-overlay-shadow, rgba(37, 43, 58, 0.16)); // 信息展示类阴影色
+$nancalui-divider: var(--nancalui-divider, #ebedf0); // 分割线颜色
+$nancalui-input-placeholder: var(--nancalui-input-placeholder, #ebedf0); // 输入框占位符颜色
+// 图标
+$nancalui-icon-text: var(--nancalui-icon-text, $nancalui-slate-70); // 文字图标颜色
+$nancalui-icon-bg: var(--nancalui-icon-bg, $nancalui-white-5); // svg图标 背景色
+$nancalui-icon-fill: var(--nancalui-icon-fill, $nancalui-slate-70); // svg图标 灰色填充色
+$nancalui-icon-fill-weak: var(--nancalui-icon-fill-weak, $nancalui-slate-50); // svg弱化图标 灰色填充色
+$nancalui-icon-fill-hover: var(--nancalui-icon-fill-hover, $nancalui-slate-100); // svg图标 灰色填充色悬停反馈色
+$nancalui-icon-fill-active: var(--nancalui-icon-fill-active, $nancalui-slate-100); // svg图标 高亮填充色（激活状态）
+$nancalui-icon-fill-active-hover: var(--nancalui-primary-hover, $nancalui-slate-100); // svg图标 高亮填充色悬停反馈色
+$nancalui-shape-icon-fill: var(--nancalui-shape-icon-fill, $nancalui-slate-30); // svg图标 面型图标颜色
+$nancalui-shape-icon-fill-hover: var(--nancalui-shape-icon-fill-hover, $nancalui-slate-50); // svg图标 面型图标悬浮色
+$nancalui-shape-icon-fill-active: var(--nancalui-shape-icon-fill-active, $nancalui-slate-50); // svg图标 面型图标激活色
+$nancalui-shape-icon-fill-disabled: var(--nancalui-shape-icon-fill-disabled, $nancalui-gray-5); // svg图标 面型图标激活色
+// 表单
+$nancalui-input-border-color: var(--nancalui-input-border-color); // 表单input边框色
+$nancalui-form-control-line: var(--nancalui-form-control-line, $nancalui-slate-30); // 表单控件边框色，同 边框分割线
+$nancalui-form-control-bg: var(--nancalui-form-control-bg, $nancalui-white-5); // 表单控件背景色
+$nancalui-form-control-line-hover: var(--nancalui-form-control-line-hover, #575d6c); // 表单控件边框悬停反馈色
+$nancalui-form-control-line-active: var(--nancalui-primary-hover, $nancalui-blue-50); // 表单控件边框激活色，用于获得焦点
+$nancalui-form-control-line-active-hover: var(--nancalui-primary-hover-hover, $nancalui-blue-90); // 表单控件边框激活色，用于获得焦点且悬停
+$nancalui-form-label-color: var(--nancalui-form-label-color, #000000); // 正文文本
+// 列表
+$nancalui-list-item-active-bg: var(--nancalui-list-item-active-bg, $nancalui-blue-5); // 列表类型单选选中背景
+$nancalui-list-item-active-text: var(
+  --nancalui-list-item-active-text,
+  $nancalui-slate-100
+); // 列表类型单选选中背景搭配文本，同 有色深色背景下字体颜色（固定）
+$nancalui-list-item-active-hover-bg: var(
+  --nancalui-list-item-active-hover-bg,
+  $nancalui-blue-5
+); // 列表类型单选选中背景悬停反馈色（仅用于分页等）
+$nancalui-list-item-hover-bg: var(--nancalui-list-item-hover-bg, $nancalui-zinc-10); // 列表类型普通选项悬停背景
+$nancalui-list-item-hover-text: var(--nancalui-list-item-hover-text, $nancalui-slate-100); // 列表类型普通选项悬停背景搭配文本
+$nancalui-list-item-selected-bg: var(--nancalui-list-item-selected-bg, $nancalui-blue-5); // 列表类型多选被选中的行色，仅用于表格类
+$nancalui-list-item-strip-bg: var(--nancalui-list-item-strip-bg, $nancalui-blue-5); // 列表类型斑马纹色，仅用于表格类
+// 禁用
+$nancalui-disabled-bg: var(--nancalui-disabled-bg, $nancalui-gray-5); // disabled背景颜色
+$nancalui-disabled-line: var(--nancalui-disabled-line, $nancalui-slate-20); // disabled边框颜色
+$nancalui-disabled-text: var(--nancalui-disabled-text, #c8c9cc); // disabled文字颜色
+$nancalui-primary-disabled: var(--nancalui-primary-disabled, $nancalui-blue-20); //主要按钮disabled状态文字颜色
+$nancalui-success-disabled: var(--nancalui-success-disabled, $nancalui-green-20); //主要按钮disabled状态文字颜色
+$nancalui-warning-disabled: var(--nancalui-warning-disabled, $nancalui-yellow-20); //主要按钮disabled状态文字颜色
+$nancalui-icon-fill-active-disabled: var(--nancalui-icon-fill-active-disabled, $nancalui-blue-20); // svg图标激活状态禁用色
+// 特殊背景色
+$nancalui-label-bg: var(--nancalui-label-bg, $nancalui-blue-10); // 默认标签化选项背景色
+$nancalui-connected-overlay-bg: var(--nancalui-connected-overlay-bg, $nancalui-white-5); // 有连接点的弹出菜单层背景色
+$nancalui-connected-overlay-line: var(--nancalui-connected-overlay-line, $nancalui-blue-60); // 有连接点的弹出菜单层边框色
+$nancalui-fullscreen-overlay-bg: var(--nancalui-fullscreen-overlay-bg, $nancalui-white-5); // 全屏类型的弹出内容层背景色（模态弹窗）
+$nancalui-feedback-overlay-bg: var(--nancalui-feedback-overlay-bg, #464d6e); // 信息提示反馈类型的漂浮层背景色（toast、popover）
+$nancalui-pop-overlay-bg: #000000; // trigger弹窗背景色
+$nancalui-feedback-overlay-text: var(--nancalui-feedback-overlay-text, $nancalui-slate-20); // 信息提示反馈类型的漂浮层背景色搭配文本色
+$nancalui-embed-search-bg: var(--nancalui-embed-search-bg, $nancalui-zinc-10); // 被嵌套的无边框搜索框背景色
+$nancalui-embed-search-bg-hover: var(--nancalui-embed-search-bg-hover, $nancalui-slate-10); // 被嵌套的无边框搜索框背景色
+$nancalui-float-block-shadow: var(--nancalui-float-block-shadow, rgba(94, 124, 224, 0.3)); // 特殊浮层背景色（待修正）
+$nancalui-highlight-overlay: var(--nancalui-highlight-overlay, rgba(255, 255, 255, 0.8)); // 局部半透明全局浮层背景色（比如底部）
+$nancalui-range-item-hover-bg: var(--nancalui-range-item-hover-bg, $nancalui-blue-10); // datepicker范围中的日期hover的反馈背景色
+
+// 按钮
+$nancalui-primary: var(--nancalui-primary, $nancalui-blue-50); // 主要按钮，同品牌色
+$nancalui-primary-hover: var(--nancalui-primary-hover, $nancalui-blue-40); // 主要按钮悬停
+$nancalui-primary-active: var(--nancalui-primary-active, $nancalui-blue-90); // 主要按钮激活
+
+$nancalui-success: var(--nancalui-success, $nancalui-green-50); // 成功按钮，同品牌色
+$nancalui-success-hover: var(--nancalui-success-hover, $nancalui-green-40); // 成功按钮悬停
+$nancalui-success-active: var(--nancalui-success-active, $nancalui-green-90); // 成功按钮激活
+
+$nancalui-warning: var(--nancalui-warning, $nancalui-yellow-50); // 警告按钮，同品牌色
+$nancalui-warning-hover: var(--nancalui-warning-hover, $nancalui-yellow-40); // 警告按钮悬停
+$nancalui-warning-active: var(--nancalui-warning-active, $nancalui-yellow-90); // 警告按钮激活
+
+$nancalui-contrast-hover: var(--nancalui-contrast-hover, #d64a52); // 突出按钮悬停
+$nancalui-contrast-active: var(--nancalui-contrast-active, #e72b2d); // 突出按钮激活
+$nancalui-contrast-disabled: var(--nancalui-contrast-disabled, #ffbcba); // 突出按钮禁用
+
+// 状态
+$nancalui-danger-line: var(--nancalui-danger-line, $nancalui-red-50); // 失败边框
+$nancalui-danger-bg: var(--nancalui-danger-bg, $nancalui-red-5); // 失败底色
+$nancalui-danger-hover: var(--nancalui-danger-hover); // 失败底色
+$nancalui-danger-active: var(--nancalui-danger-active); // 失败底色
+
+$nancalui-warning-line: var(--nancalui-warning-line, $nancalui-orange-50); // 警告边框
+$nancalui-warning-bg: var(--nancalui-warning-bg, $nancalui-orange-5); // 警告底色
+$nancalui-warning-hover: var(--nancalui-warning-hover); // 失败底色
+$nancalui-warning-active: var(--nancalui-warning-active); // 失败底色
+
+$nancalui-info-line: var(--nancalui-info-line, $nancalui-blue-50); // 通知边框
+$nancalui-info-bg: var(--nancalui-info-bg, $nancalui-blue-5); // 通知底色
+
+$nancalui-success-line: var(--nancalui-success-line, $nancalui-green-50); // 成功边框
+$nancalui-success-bg: var(--nancalui-success-bg, $nancalui-green-5); // 成功底色
+$nancalui-primary-line: var(--nancalui-primary-line, $nancalui-blue-50); // 主要边框
+$nancalui-primary-bg: var(--nancalui-primary-bg, $nancalui-blue-5); // 主要底色
+
+$nancalui-default-line: var(--nancalui-default-line, $nancalui-blue-50); // 默认边框
+$nancalui-default-bg: var(--nancalui-default-bg, $nancalui-slate-5); // 默认底色

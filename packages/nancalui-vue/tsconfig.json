@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],
+    "types": ["vite/client", "jest", "node"],
+    "esModuleInterop": true,
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "paths": {
+      "hooks/*": ["./nancalui/shared/hooks/*"],
+      "@nancalui/*": ["./nancalui/*"]
+    },
+    "declaration": true,
+    "declarationDir": "build/types"
+  },
+  "include": ["nancalui/**/*.ts", "nancalui/**/*.d.ts", "nancalui/**/*.tsx", "nancalui/**/*.vue"]
+}

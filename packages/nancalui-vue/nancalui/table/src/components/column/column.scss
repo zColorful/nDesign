@@ -1,0 +1,44 @@
+@import '../../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-table {
+  &__tbody {
+    tr {
+      .#{$nancalui-prefix}-table__tree-operate {
+        padding-right: 8px;
+        cursor: pointer;
+
+        > svg.svg-icon rect {
+          stroke: $nancalui-disabled-text;
+        }
+
+        > svg.svg-icon path {
+          fill: $nancalui-disabled-text;
+        }
+
+        > svg.svg-icon.svg-icon-close rect:last-child {
+          fill: $nancalui-disabled-text;
+          stroke: none;
+        }
+
+        &:hover {
+          > svg.svg-icon rect {
+            stroke: $nancalui-icon-fill-active;
+          }
+
+          > svg.svg-icon path {
+            fill: $nancalui-icon-fill-active;
+          }
+
+          > svg.svg-icon.svg-icon-close rect:last-child {
+            fill: $nancalui-icon-fill-active;
+            stroke: none;
+          }
+        }
+
+        .svg-icon {
+          transform: translate(0, 20%);
+        }
+      }
+    }
+  }
+}

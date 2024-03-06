@@ -1,0 +1,92 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-badge {
+  position: relative;
+  display: inline-block;
+
+  &__content {
+    font-size: $nancalui-font-size-sm;
+    color: $nancalui-light-text;
+  }
+
+  &--count {
+    padding: 0 4px;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: $nancalui-border-radius-full;
+    background: $nancalui-brand;
+    text-align: center;
+  }
+
+  &--danger {
+    background: $nancalui-danger;
+  }
+
+  &--warning {
+    background: $nancalui-warning;
+  }
+
+  &--waiting {
+    background: $nancalui-waiting;
+  }
+
+  &--success {
+    background: $nancalui-success;
+  }
+
+  &--info {
+    background: $nancalui-brand;
+  }
+
+  &--common {
+    background: $nancalui-unavailable;
+    color: $nancalui-aide-text;
+  }
+
+  &--top-left {
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &--top-right {
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &--bottom-left {
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+  }
+
+  &--bottom-right {
+    right: 0;
+    bottom: 0;
+    transform: translate(50%, 50%);
+  }
+
+  &--fixed {
+    position: absolute;
+  }
+
+  &--dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  &--show {
+    visibility: visible;
+    opacity: 1;
+    transition: all $nancalui-animation-duration-fast $nancalui-animation-ease-out;
+  }
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all $nancalui-animation-duration-fast $nancalui-animation-ease-in;
+  }
+}

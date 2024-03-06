@@ -1,0 +1,84 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$card-ele-space: var(--card-ele-space, 8px);
+$card-block-space: var(--card-block-space, 16px);
+$card-border-radius: $nancalui-border-radius-card;
+$card-title-font-size: $nancalui-font-size-card-title;
+$card-subtitle-font-size: $nancalui-font-size;
+$card-content-font-size: $nancalui-font-size;
+
+.#{$nancalui-prefix}-card {
+  position: relative;
+  display: block;
+  padding: 16px 20px;
+  border-radius: $card-border-radius;
+  box-shadow: $nancalui-shadow-length-base $nancalui-light-shadow;
+  transition: box-shadow $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth,
+    transform $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+}
+
+.#{$nancalui-prefix}-card__title {
+  display: block;
+  font-size: $card-title-font-size;
+  font-weight: 600;
+  color: $nancalui-text;
+}
+
+.#{$nancalui-prefix}-card__subtitle {
+  display: block;
+  font-size: $card-subtitle-font-size;
+  color: $nancalui-aide-text-stress;
+}
+
+.#{$nancalui-prefix}-card__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: $card-block-space;
+}
+
+.#{$nancalui-prefix}-card__avatar {
+  margin-right: $card-block-space;
+}
+
+.#{$nancalui-prefix}-card__content {
+  font-size: $card-content-font-size;
+  color: $nancalui-aide-text;
+}
+
+.#{$nancalui-prefix}-card__actions {
+  margin-top: $card-block-space;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.#{$nancalui-prefix}-card__title + .#{$nancalui-prefix}-card__subtitle {
+  margin-top: $card-ele-space;
+}
+
+.#{$nancalui-prefix}-card__actions--align-end {
+  justify-content: flex-end;
+}
+
+.#{$nancalui-prefix}-card__actions--align-spaceBetween {
+  justify-content: space-between;
+}
+
+.#{$nancalui-prefix}-card__meta {
+  width: calc(100% + 40px);
+  margin: 0 -20px $card-block-space -20px;
+  height: auto;
+}
+
+.#{$nancalui-prefix}-card__meta:first-child {
+  margin-top: -$card-block-space;
+}
+
+.#{$nancalui-prefix}-card {
+  &__shadow--hover:hover,
+  &__shadow--always {
+    box-shadow: $nancalui-shadow-length-hover $nancalui-light-shadow;
+    transform: translateY(-5px);
+  }
+}

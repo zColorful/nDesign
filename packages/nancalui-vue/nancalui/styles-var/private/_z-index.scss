@@ -1,0 +1,10 @@
+// zIndex 层级
+
+$nancalui-z-index-full-page-overlay: var(--nancalui-z-index-full-page-overlay, 1080); // 全屏覆盖类元素
+$nancalui-z-index-pop-up: var(--nancalui-z-index-pop-up, 1060); // 提示类信息，popover，tooltip等
+$nancalui-z-index-dropdown: var(--nancalui-z-index-dropdown, 1052); // 下拉菜单，dropdown等, 兼容, 取值待重新定义
+$nancalui-z-index-modal: var(--nancalui-z-index-modal, 1070); // 弹窗,
+$nancalui-z-index-message: var(--nancalui-z-index-modal, 1079); // 全局消息,
+$nancalui-z-index-drawer: var(--nancalui-z-index-drawer, 1040); // 抽屉板
+$nancalui-z-index-framework: var(--nancalui-z-index-framework, 1000); // 框架类元素，header,sideMenu等
+$nancalui-z-index-function-widget: var(--nancalui-z-index-function-widget, 9999); // 功能控件类（在一个组件中处于最上层）

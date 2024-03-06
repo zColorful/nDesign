@@ -1,0 +1,26 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-tooltip {
+  opacity: 1;
+
+  &__content {
+    max-width: 350px;
+    padding: 4px 16px;
+    font-size: $nancalui-font-size;
+    color: $nancalui-feedback-overlay-text;
+    line-height: 1.5;
+    text-align: left;
+    word-wrap: break-word;
+    background: $nancalui-pop-overlay-bg;
+    border-radius: $nancalui-border-radius-feedback;
+  }
+
+  &__mini {
+    padding: 2px 16px;
+    font-size: $nancalui-font-size;
+  }
+
+  &-popup-arrow {
+    background-color: $nancalui-pop-overlay-bg;
+  }
+}

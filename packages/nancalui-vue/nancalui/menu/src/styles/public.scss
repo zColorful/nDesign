@@ -1,0 +1,40 @@
+// 用于存放一些vertical 和 horizontal公用的样式
+.#{$nancalui-prefix}-menu-icon + span {
+  margin-left: $nancalui-menu-item-margin;
+}
+
+.#{$nancalui-prefix}-menu-item-disabled:hover,
+.#{$nancalui-prefix}-submenu-disabled:hover {
+  color: $nancalui-menu-item-disabled !important;
+  cursor: not-allowed !important;
+}
+
+.#{$nancalui-prefix}-submenu-disabled:hover {
+  span {
+    color: $nancalui-menu-item-disabled !important;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $nancalui-animation-duration-slow $nancalui-animation-ease-in-smooth;
+}
+
+.fade-leave-to {
+  display: none;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.#{$nancalui-prefix}-menu-item-disabled,
+.#{$nancalui-prefix}-menu-item-disabled.nancalui-menu-vertical
+  .#{$nancalui-prefix}-menu-item-disabled.nancalui-menu-item-select
+  .#{$nancalui-prefix}-submenu-disabled,
+.#{$nancalui-prefix}-submenu-disabled.nancalui-menu-vertical,
+.#{$nancalui-prefix}-submenu-disabled.nancalui-menu-item-select {
+  color: $nancalui-menu-item-disabled !important;
+  cursor: not-allowed !important;
+}

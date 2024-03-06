@@ -1,0 +1,17 @@
+// 字号大小变量
+
+$nancalui-font-size: var(--nancalui-font-size, 12px); //正文、卡片副标题
+$nancalui-font-size-card-title: var(--nancalui-font-size-card-title, 14px); //卡片标题
+$nancalui-font-size-page-title: var(--nancalui-font-size-page-title, 16px); //页面标题
+$nancalui-font-size-modal-title: var(--nancalui-font-size-modal-title, 18px); //弹窗标题、数字
+$nancalui-font-size-price: var(--nancalui-font-size-price, 20px); //购买价格
+$nancalui-font-size-data-overview: var(--nancalui-font-size-data-overview, 24px); //数据总览
+
+$nancalui-font-size-icon: var(--nancalui-font-size-icon, 16px); //图标大小
+$nancalui-font-size-sm: var(--nancalui-font-size-sm, 12px); //当组件size为'sm'时使用此字号大小
+$nancalui-font-size-md: var(--nancalui-font-size-md, 12px); //当组件size为''时使用此字号大小
+$nancalui-font-size-lg: var(--nancalui-font-size-lg, 14px); //当组件size为'lg'时使用此字号大小
+
+$nancalui-font-title-weight: bold; //标题文字粗细
+$nancalui-font-content-weight: normal; //内容文字粗细
+$nancalui-line-height-base: 1.5; //规范行高

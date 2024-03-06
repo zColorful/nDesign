@@ -1,0 +1,397 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-pagination {
+  display: flex;
+  align-items: center;
+  font-size: $nancalui-font-size;
+
+  .#{$nancalui-prefix}-pagination__size {
+    position: relative;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 27px;
+    height: 27px;
+    margin: 0 8px 0 0;
+    padding: 4px 10px;
+    background-color: $nancalui-base-bg;
+    border-color: $nancalui-form-control-line;
+    border-radius: $nancalui-border-radius;
+    border-width: 1px;
+    border-style: solid;
+    color: $nancalui-text;
+    transition: border-color 0.3s $nancalui-animation-ease-in-out-smooth;
+    outline: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $nancalui-form-control-line-hover;
+    }
+
+    &:focus {
+      border-color: $nancalui-form-control-line-active;
+    }
+
+    &.#{$nancalui-prefix}-pagination__size--sm {
+      height: 26px;
+    }
+
+    &.#{$nancalui-prefix}-pagination__size--lg {
+      height: 46px;
+    }
+  }
+
+  .#{$nancalui-prefix}-pagination__total-size {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 12px 0 0;
+    color: $nancalui-text-weak;
+  }
+
+  .#{$nancalui-prefix}-pagination__list,
+  .#{$nancalui-prefix}-pagination__item {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #3eaf7c;
+  }
+
+  .#{$nancalui-prefix}-pagination__list {
+    margin-right: 7px;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+
+    > .disabled > a,
+    > .disabled > a:hover,
+    > .disabled > a:focus {
+      cursor: not-allowed;
+    }
+
+    li.#{$nancalui-prefix}-pagination__item {
+      cursor: pointer;
+
+      &:not(.disabled).active {
+        a.#{$nancalui-prefix}-pagination__link {
+          text-decoration: none;
+          background-color: $nancalui-primary;
+          color: $nancalui-light-text;
+          border-color: transparent !important;
+          cursor: pointer;
+        }
+
+        a.#{$nancalui-prefix}-pagination__link:hover {
+          text-decoration: none;
+          background-color: $nancalui-primary;
+          color: $nancalui-light-text;
+          border: 1px solid #ebebeb !important;
+          box-shadow: none;
+        }
+      }
+
+      .#{$nancalui-prefix}-pagination__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
+        min-width: 28px;
+        margin-left: 4px;
+        padding: 0 4px;
+        line-height: 24px;
+        border-radius: $nancalui-border-radius;
+        border: 1px solid #ebebeb;
+        color: $nancalui-text-weak;
+        transition: background-color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+
+        &:hover {
+          text-decoration: none;
+          background-color: transparent;
+          color: $nancalui-text;
+          border: 1px solid #ebebeb;
+          box-shadow: 0 1px 3px 0 $nancalui-light-shadow;
+        }
+
+        svg {
+          vertical-align: middle;
+
+          g polygon {
+            fill: $nancalui-icon-text;
+          }
+        }
+      }
+
+      &.disabled {
+        a.#{$nancalui-prefix}-pagination__link {
+          cursor: not-allowed;
+          color: $nancalui-disabled-text;
+
+          &:hover {
+            box-shadow: none;
+          }
+
+          svg g polygon {
+            fill: $nancalui-disabled-text;
+          }
+        }
+      }
+
+      &:not(.disabled) {
+        a.#{$nancalui-prefix}-pagination__link {
+          &:active {
+            svg g polygon {
+              fill: $nancalui-text;
+            }
+          }
+
+          &:hover:not(:active) {
+            svg g polygon {
+              fill: $nancalui-icon-fill-active-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-pagination--sm > li.#{$nancalui-prefix}-pagination__item > a.#{$nancalui-prefix}-pagination__link {
+    min-width: 27px;
+    height: 27px;
+    line-height: 22px;
+    font-size: $nancalui-font-size-sm;
+  }
+
+  .#{$nancalui-prefix}-pagination--lg > li.#{$nancalui-prefix}-pagination__item > a.#{$nancalui-prefix}-pagination__link {
+    min-width: 40px;
+    height: 40px;
+    line-height: 38px;
+    font-size: $nancalui-font-size-lg;
+  }
+
+  .#{$nancalui-prefix}-pagination__jump-container {
+    display: inline-flex;
+    position: relative;
+    margin: 0;
+    vertical-align: middle;
+    align-items: center;
+
+    .#{$nancalui-prefix}-input {
+      height: 27px;
+      display: inline-block;
+      width: 42px;
+      vertical-align: middle;
+      margin: 0 4px;
+    }
+
+    .#{$nancalui-prefix}-input--lg {
+      width: 56px;
+    }
+  }
+
+  .#{$nancalui-prefix}-pagination__jump-button {
+    display: inline-flex;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    border-radius: $nancalui-border-radius;
+    border: 1px solid $nancalui-line;
+    cursor: pointer;
+    margin-left: 4px;
+    align-items: center;
+    justify-content: center;
+
+    .#{$nancalui-prefix}-pagination__go {
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-left: 6px solid $nancalui-icon-text;
+      border-bottom: 6px solid transparent;
+    }
+
+    &:hover {
+      border-color: $nancalui-brand-active;
+
+      .#{$nancalui-prefix}-pagination__go {
+        border-left-color: $nancalui-brand-active;
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-pagination__jump-size--default {
+    width: 28px;
+    height: 28px;
+
+    .#{$nancalui-prefix}-pagination__go {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-left: 10px solid $nancalui-icon-text;
+      border-bottom: 8px solid transparent;
+    }
+  }
+
+  .#{$nancalui-prefix}-pagination__jump-size--sm {
+    width: 24px;
+    height: 24px;
+
+    .#{$nancalui-prefix}-pagination__go {
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-left: 6px solid $nancalui-icon-text;
+      border-bottom: 6px solid transparent;
+    }
+
+    .#{$nancalui-prefix}-pagination__link {
+      height: 30px;
+      line-height: 32px;
+    }
+  }
+
+  .#{$nancalui-prefix}-pagination__jump-size--lg {
+    width: 46px;
+    height: 46px;
+
+    .#{$nancalui-prefix}-pagination__go {
+      width: 0;
+      height: 0;
+      border-top: 14px solid transparent;
+      border-left: 14px solid $nancalui-icon-text;
+      border-bottom: 14px solid transparent;
+    }
+  }
+
+  .#{$nancalui-prefix}-pagination__config {
+    color: $nancalui-text;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
+
+  .#{$nancalui-prefix}-pagination__setup-icon {
+    line-height: 30px;
+    cursor: pointer;
+    display: flex;
+  }
+
+  .#{$nancalui-prefix}-pagination__config-container {
+    padding: 4px 0;
+    box-shadow: $nancalui-shadow-length-connected-overlay $nancalui-shadow;
+    border-radius: $nancalui-border-radius;
+    width: 150px;
+    background-color: $nancalui-connected-overlay-bg;
+    line-height: 26px;
+    position: absolute;
+    left: -136px;
+    top: 28px;
+    cursor: auto;
+    z-index: $nancalui-z-index-dropdown;
+    user-select: none;
+  }
+
+  /* 配置中的每一项，自定义项建议应用此样式或在此基础上修改 */
+  .#{$nancalui-prefix}-pagination__config-item {
+    padding-bottom: 8px;
+    padding-top: 4px;
+    border-bottom: 1px solid $nancalui-line;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  /* 配置中每一项的标题样式，自定义项建议应用此样式或在此基础上修改 */
+  .config-item-title {
+    color: $nancalui-line;
+    padding-left: 8px;
+    font-size: $nancalui-font-size;
+    line-height: 1.5;
+  }
+
+  .#{$nancalui-prefix}-pagination__number {
+    padding-left: 8px;
+    margin-top: 4px;
+    display: flex;
+
+    div {
+      color: $nancalui-text;
+      cursor: pointer;
+      border-top: 1px solid $nancalui-line;
+      border-bottom: 1px solid $nancalui-line;
+      border-right: 1px solid $nancalui-line;
+      text-align: center;
+      height: 26px;
+      width: 26px;
+
+      &:first-child {
+        border-left: 1px solid $nancalui-line;
+      }
+
+      &:hover {
+        background-color: $nancalui-list-item-hover-bg;
+        color: $nancalui-list-item-hover-text;
+      }
+
+      &.choosed {
+        color: $nancalui-list-item-active-text;
+        background-color: $nancalui-list-item-active-bg !important;
+        cursor: auto !important;
+      }
+    }
+  }
+
+  .config-item-words {
+    color: $nancalui-text;
+    padding-left: 8px;
+    font-size: $nancalui-font-size;
+    margin-top: 4px;
+  }
+
+  .config-item-words:hover {
+    background-color: $nancalui-area;
+    cursor: pointer;
+  }
+}
+
+.#{$nancalui-prefix}-pagination__size-list {
+  min-width: 60px;
+  padding: 12px;
+  background-clip: padding-box;
+  background-color: $nancalui-connected-overlay-bg;
+  border-radius: $nancalui-border-radius;
+  outline: none;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  li {
+    display: block;
+    width: 100%;
+    min-height: 36px;
+    line-height: 20px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: $nancalui-border-radius;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color $nancalui-animation-duration-fast $nancalui-animation-ease-in-out-smooth,
+      background-color $nancalui-animation-duration-fast $nancalui-animation-ease-in-out-smooth;
+
+    &:hover {
+      color: $nancalui-list-item-hover-text;
+      background-color: $nancalui-list-item-hover-bg;
+    }
+  }
+}

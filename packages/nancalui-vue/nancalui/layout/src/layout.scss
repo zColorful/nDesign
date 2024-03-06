@@ -1,0 +1,11 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-layout {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+
+  &__aside {
+    flex-direction: row;
+  }
+}

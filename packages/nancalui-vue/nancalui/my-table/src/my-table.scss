@@ -1,0 +1,26 @@
+.nancalui-table-page {
+  padding-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.nancalui-table__scroll-view {
+  overflow: auto;
+}
+
+.nancalui-table__fix-header {
+  overflow: hidden !important;
+}
+
+.table-empty {
+  img {
+    width: 267px;
+  }
+
+  .empty-word {
+    color: #999999;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}

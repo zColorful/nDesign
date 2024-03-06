@@ -1,0 +1,105 @@
+@import './font';
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $nancalui-text;
+  font-size: $nancalui-font-size;
+  font-family: $font-family;
+  line-height: $nancalui-line-height-base;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: button;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+:-ms-input-placeholder {
+  color: $nancalui-placeholder;
+}
+
+::-moz-placeholder {
+  color: $nancalui-placeholder;
+}
+
+::-webkit-input-placeholder {
+  color: $nancalui-placeholder;
+}
+
+//******************滚动条*************************/
+.#{$nancalui-prefix}-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.#{$nancalui-prefix}-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.#{$nancalui-prefix}-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: $nancalui-line;
+}
+
+.#{$nancalui-prefix}-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: $nancalui-placeholder; // TODO: Color-Question
+}
+
+body > * ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+body > * ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body > * ::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: $nancalui-line;
+}
+
+body > * ::-webkit-scrollbar-thumb:hover {
+  background-color: $nancalui-placeholder; // TODO: Color-Question
+}
+
+body > * ::-webkit-scrollbar-corner {
+  background-color: transparent;
+}

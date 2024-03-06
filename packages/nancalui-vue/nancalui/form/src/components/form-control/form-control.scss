@@ -1,0 +1,136 @@
+@import '../../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-form__control {
+  flex: 1 1 auto;
+  position: relative;
+  width: 100%;
+
+  &--horizontal {
+    margin-left: 16px;
+  }
+
+  .#{$nancalui-prefix}-star {
+    color: red;
+  }
+
+  .#{$nancalui-prefix}-form__control-container {
+    position: relative;
+
+    &--horizontal {
+      display: flex;
+      width: 100%;
+
+      .#{$nancalui-prefix}-validate-tip {
+        margin: 0;
+      }
+    }
+
+    .#{$nancalui-prefix}-form__feedback-icon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 1;
+      width: 32px;
+      height: 16px;
+      text-align: center;
+      visibility: visible;
+      pointer-events: none;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &--error {
+        svg circle {
+          fill: $nancalui-danger;
+        }
+
+        svg polygon {
+          fill: $nancalui-base-bg;
+        }
+      }
+
+      &--success {
+        svg circle {
+          fill: $nancalui-success;
+        }
+
+        svg polygon {
+          fill: $nancalui-base-bg;
+        }
+      }
+
+      &--pending {
+        svg {
+          animation: loading-keyframes 1s infinite linear;
+        }
+
+        svg path {
+          fill: $nancalui-brand;
+        }
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-form__control-container--has-feedback {
+    display: flex;
+    align-items: center;
+
+    input {
+      padding-right: 28px;
+    }
+  }
+
+  .#{$nancalui-prefix}-form__control-container--feedback-error {
+    border: 1px solid #f66f6a;
+    border-radius: 2px;
+
+    input {
+      background-color: #ffeeed;
+      border-color: transparent;
+
+      &:hover {
+        border-color: transparent !important;
+      }
+
+      &:focus {
+        border-color: transparent !important;
+      }
+    }
+
+    .#{$nancalui-prefix}-select-arrow {
+      right: 24px !important;
+    }
+  }
+
+  .#{$nancalui-prefix}-form__control-info {
+    line-height: 1;
+    position: absolute;
+
+    .error-message {
+      display: inline-block;
+      min-height: 20px;
+      line-height: 1.5;
+      font-size: $nancalui-font-size;
+      color: $nancalui-danger;
+    }
+
+    .#{$nancalui-prefix}-form__control-extra {
+      font-size: $nancalui-font-size;
+      color: $nancalui-aide-text;
+      min-height: 20px;
+      line-height: 1.5;
+      text-align: justify;
+    }
+  }
+}
+
+@keyframes loading-keyframes {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}

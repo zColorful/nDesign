@@ -1,0 +1,20 @@
+node_modules
+.DS_Store
+nc-data
+dist
+dist-ssr
+build
+types
+*.local
+package-lock.json
+yarn.lock
+yarn-error.log
+.history
+.vscode
+.idea
+# packages/nancalui-vue/nancalui/vue-nancalui.ts
+# packages/nancalui-vue/nancalui/theme/theme.scss
+# packages/nancalui-vue/docs/.vitepress/config/sidebar.ts
+# packages/nancalui-vue/docs/.vitepress/config/enSidebar.ts
+.pnpm-debug.log
+coverage

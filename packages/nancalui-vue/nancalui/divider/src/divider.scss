@@ -1,0 +1,41 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-divider--horizontal {
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 24px 0;
+  border-top: 1px solid $nancalui-divider;
+  color: $nancalui-divider;
+  position: relative;
+}
+
+.#{$nancalui-prefix}-divider__text {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  padding: 0 20px;
+  font-weight: 500;
+  color: #333333;
+  font-size: 14px;
+  &.#{$nancalui-prefix}-divider__text.is-left {
+    transform: translateY(-50%);
+  }
+  &.#{$nancalui-prefix}-divider__text.is-center {
+    left: 50%;
+    transform: translate(-50%) translateY(-50%);
+  }
+  &.#{$nancalui-prefix}-divider__text.is-right {
+    transform: translateY(-50%);
+  }
+}
+
+.#{$nancalui-prefix}-divider--vertical {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin: 0 8px;
+  vertical-align: middle;
+  position: relative;
+  border-left: 1px solid $nancalui-divider;
+  color: $nancalui-divider;
+}

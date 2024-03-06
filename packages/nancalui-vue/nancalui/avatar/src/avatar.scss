@@ -1,0 +1,19 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-avatar {
+  display: inline-block;
+}
+
+.#{$nancalui-prefix}-avatar__style {
+  display: inline-block;
+  text-align: center;
+  color: $nancalui-light-text;
+}
+
+.#{$nancalui-prefix}-avatar--background-0 {
+  background-color: #ff8b87;
+}
+
+.#{$nancalui-prefix}-avatar--background-1 {
+  background-color: #6E9EFF;
+}

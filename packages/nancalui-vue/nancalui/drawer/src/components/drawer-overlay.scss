@@ -1,0 +1,20 @@
+@import '../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-drawer__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $nancalui-shadow;
+}
+
+.drawer-overlay-fade-enter-active,
+.drawer-overlay-fade-leave-active {
+  transition: opacity 0.1s linear;
+}
+
+.drawer-overlay-fade-enter-from,
+.drawer-overlay-fade-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,561 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$nancalui-btn-padding: var(--nancalui-btn-padding, 0 20px);
+$nancalui-btn-common-bg: var(--nancalui-btn-common-bg, $nancalui-base-bg);
+$nancalui-btn-common-bg-hover: var(--nancalui-btn-common-bg-hover, $nancalui-base-bg);
+$nancalui-btn-common-bg-active: var(--nancalui-btn-common-bg-active, $nancalui-base-bg);
+$nancalui-btn-common-color-hover: var(--nancalui-btn-common-color-hover, $nancalui-brand-active);
+$nancalui-btn-common-color-active: var(--nancalui-btn-common-color-active, $nancalui-brand-active);
+$nancalui-btn-common-border-color: var(--nancalui-btn-common-border-color, $nancalui-line);
+$nancalui-btn-common-border-color-hover: var(--nancalui-btn-common-border-color-hover, $nancalui-form-control-line-active);
+$nancalui-btn-common-border-color-active: var(--nancalui-btn-common-border-color-active, $nancalui-form-control-line-active);
+$nancalui-btn-sm-padding: var(--nancalui-btn-sm-padding, 0 16px);
+$nancalui-btn-lg-padding: var(--nancalui-btn-lg-padding, 0 24px);
+
+.#{$nancalui-prefix}-button {
+  padding: $nancalui-btn-padding;
+  font-size: $nancalui-font-size-md;
+  height: $nancalui-size-md;
+  line-height: $nancalui-line-height-base;
+  border-radius: $nancalui-border-radius;
+  border-width: 1px;
+  border-color: transparent;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--is-loading {
+    pointer-events: none;
+  }
+
+  &--solid {
+    color: $nancalui-light-text;
+    // min-width: 64px;
+    i {
+      color: $nancalui-light-text;
+    }
+
+    &--secondary {
+      color: $nancalui-text;
+      border-color: $nancalui-btn-common-border-color;
+      background-color: $nancalui-btn-common-bg;
+
+      &:hover {
+        color: $nancalui-btn-common-color-hover;
+        border-color: $nancalui-btn-common-border-color-hover;
+        background-color: $nancalui-btn-common-bg-hover;
+      }
+
+      &:focus {
+        color: $nancalui-btn-common-color-active;
+        border-color: $nancalui-btn-common-border-color-active;
+        background-color: $nancalui-btn-common-bg-hover;
+      }
+
+      &:active {
+        color: $nancalui-btn-common-color-active;
+        border-color: $nancalui-btn-common-border-color-active;
+        background-color: $nancalui-btn-common-bg-hover;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &--primary {
+      background-color: $nancalui-primary;
+
+      &:hover {
+        background-color: $nancalui-primary-hover;
+      }
+
+      &:focus {
+        background-color: $nancalui-primary-hover;
+      }
+
+      &:active {
+        background-color: $nancalui-primary-active;
+      }
+
+      &:disabled {
+        // color: $nancalui-light-text;
+        // background: $nancalui-primary-disabled;
+        // border: none;
+        color: $nancalui-disabled-text;
+        border-color: $nancalui-disabled-line;
+        background-color: $nancalui-disabled-bg;
+
+        i {
+          color: $nancalui-disabled-text;
+        }
+      }
+    }
+
+    &--success {
+      background-color: $nancalui-success;
+
+      &:hover {
+        background-color: $nancalui-success-hover;
+      }
+
+      &:focus {
+        background-color: $nancalui-success-hover;
+      }
+
+      &:active {
+        background-color: $nancalui-success-active;
+      }
+
+      &:disabled {
+        color: $nancalui-light-text;
+        background: $nancalui-success-disabled;
+        border: none;
+      }
+    }
+
+    &--warning {
+      background-color: $nancalui-warning;
+
+      &:hover {
+        background-color: $nancalui-warning-hover;
+      }
+
+      &:focus {
+        background-color: $nancalui-warning-hover;
+      }
+
+      &:active {
+        background-color: $nancalui-warning-active;
+      }
+
+      &:disabled {
+        color: $nancalui-light-text;
+        background: $nancalui-warning-disabled;
+        border: none;
+      }
+    }
+
+    &--danger {
+      background-color: $nancalui-contrast;
+
+      &:hover {
+        background-color: $nancalui-contrast-hover;
+      }
+
+      &:focus {
+        background-color: $nancalui-contrast-hover;
+      }
+
+      &:active {
+        background-color: $nancalui-contrast-active;
+      }
+
+      &:disabled {
+        background-color: $nancalui-contrast-disabled;
+      }
+    }
+  }
+
+  &--outline {
+    background-color: $nancalui-block;
+    border-style: solid;
+
+    &--secondary {
+      color: $nancalui-text;
+      border-color: $nancalui-line;
+
+      &:hover {
+        color: $nancalui-brand-active;
+        border-color: $nancalui-form-control-line-active;
+      }
+
+      &:focus {
+        color: $nancalui-brand-active;
+        border-color: $nancalui-form-control-line-active;
+      }
+
+      &:active {
+        color: $nancalui-brand-active;
+        border-color: $nancalui-form-control-line-active;
+      }
+
+      &:disabled {
+        color: $nancalui-disabled-text;
+        border-color: $nancalui-disabled-line;
+        background-color: $nancalui-disabled-bg;
+
+        i {
+          color: $nancalui-disabled-text;
+        }
+      }
+    }
+
+    &--primary {
+      color: $nancalui-brand;
+      border-color: $nancalui-primary-line;
+
+      &:hover {
+        color: $nancalui-primary-hover;
+        border-color: $nancalui-primary-hover;
+      }
+
+      &:focus {
+        color: $nancalui-brand-active-focus;
+        border-color: $nancalui-form-control-line-active-hover;
+      }
+
+      &:active {
+        color: $nancalui-primary-active;
+        border-color: $nancalui-primary-active;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+        color: $nancalui-brand-active;
+        border-color: $nancalui-form-control-line-active;
+      }
+    }
+
+    &--success {
+      color: $nancalui-success;
+      border-color: $nancalui-success-line;
+
+      &:hover {
+        color: $nancalui-success-hover;
+        border-color: $nancalui-success-hover;
+      }
+
+      &:focus {
+        color: $nancalui-success-active;
+        border-color: $nancalui-success-active;
+      }
+
+      &:active {
+        color: $nancalui-success-active;
+        border-color: $nancalui-success-active;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &--warning {
+      color: $nancalui-warning;
+      border-color: $nancalui-warning;
+
+      &:hover {
+        color: $nancalui-warning-hover;
+        border-color: $nancalui-warning-hover;
+      }
+
+      &:focus {
+        color: $nancalui-warning-active;
+        border-color: $nancalui-warning-active;
+      }
+
+      &:active {
+        color: $nancalui-warning-active;
+        border-color: $nancalui-warning-active;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &--danger {
+      color: $nancalui-contrast;
+      border-color: $nancalui-contrast;
+
+      &:hover {
+        color: $nancalui-danger-hover;
+        border-color: $nancalui-danger-hover;
+      }
+
+      &:focus {
+        color: $nancalui-danger-active;
+        border-color: $nancalui-danger-active;
+      }
+
+      &:active {
+        color: $nancalui-danger-active;
+        border-color: $nancalui-danger-active;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &--text {
+    padding: 0;
+
+    &--secondary {
+      color: $nancalui-text;
+
+      &:hover {
+        color: $nancalui-list-item-hover-text;
+      }
+
+      &:focus {
+        color: $nancalui-list-item-hover-text;
+      }
+
+      &:active {
+        color: $nancalui-list-item-hover-text;
+      }
+
+      &:disabled {
+        color: $nancalui-disabled-text;
+      }
+    }
+
+    &--primary {
+      color: $nancalui-brand;
+
+      &:hover {
+        color: $nancalui-primary-hover;
+      }
+
+      &:focus {
+        color: $nancalui-primary-active;
+      }
+
+      &:active {
+        color: $nancalui-primary-active;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &--success {
+      color: $nancalui-success;
+
+      &:hover {
+        color: $nancalui-success-hover;
+      }
+
+      &:focus {
+        color: $nancalui-success-active;
+      }
+
+      &:active {
+        color: $nancalui-success-active;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &--warning {
+      color: $nancalui-warning;
+
+      &:hover {
+        color: $nancalui-warning-hover;
+      }
+
+      &:focus {
+        color: $nancalui-warning-active;
+      }
+
+      &:active {
+        color: $nancalui-warning-active;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+
+    &--danger {
+      color: $nancalui-contrast;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &--mini {
+    padding: $nancalui-btn-sm-padding;
+    height: $nancalui-size-mini;
+    font-size: $nancalui-font-size-sm;
+    min-width: 56px;
+  }
+
+  &--sm {
+    padding: $nancalui-btn-sm-padding;
+    height: $nancalui-size-sm;
+    font-size: $nancalui-font-size-sm;
+    min-width: 56px;
+  }
+
+  &--lg {
+    padding: $nancalui-btn-lg-padding;
+    height: $nancalui-size-lg;
+    font-size: $nancalui-font-size-lg;
+    min-width: 72px;
+  }
+
+  &.#{$nancalui-prefix}-button__icon:not(.#{$nancalui-prefix}-button--solid) {
+    &:hover,
+    &:focus {
+      border: 1px solid $nancalui-list-item-hover-bg;
+      background-color: $nancalui-list-item-hover-bg;
+    }
+
+    &:disabled {
+      background-color: $nancalui-disabled-bg;
+    }
+  }
+
+  &:not(:disabled) {
+    &.#{$nancalui-prefix}-button--text {
+      &.#{$nancalui-prefix}-button__icon-wrap {
+        color: $nancalui-text;
+
+        .#{$nancalui-prefix}-button__icon-fix {
+          color: $nancalui-text-weak;
+        }
+
+        &:hover {
+          color: $nancalui-list-item-hover-text;
+
+          .#{$nancalui-prefix}-button__icon-fix {
+            color: $nancalui-icon-fill-active;
+          }
+
+          .button-content {
+            color: $nancalui-brand;
+          }
+        }
+      }
+    }
+
+    &.#{$nancalui-prefix}-button--text--primary.#{$nancalui-prefix}-button__icon-wrap {
+      color: $nancalui-primary;
+
+      .#{$nancalui-prefix}-button__icon-fix {
+        color: $nancalui-primary;
+      }
+
+      .button-content {
+        color: $nancalui-primary;
+      }
+
+      &:hover {
+        color: $nancalui-primary-hover;
+
+        .#{$nancalui-prefix}-button__icon-fix {
+          color: $nancalui-primary-hover;
+        }
+
+        .button-content {
+          color: $nancalui-primary-hover;
+        }
+      }
+    }
+  }
+
+  &--circle {
+    border-radius: 100%;
+  }
+
+  &--round {
+    border-radius: 20px;
+  }
+}
+
+.#{$nancalui-prefix}-loading {
+  .#{$nancalui-prefix}-loading-default-spinner {
+    div {
+      background-color: $nancalui-text;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-button {
+  transition:
+    background-color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth,
+    border-color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth,
+    color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+
+  &.#{$nancalui-prefix}-button__icon {
+    padding: 8px;
+    line-height: 1em;
+    min-width: unset;
+
+    &:not(.#{$nancalui-prefix}-button--circle) {
+      border: 1px solid transparent;
+    }
+
+    &.#{$nancalui-prefix}-button--sm {
+      padding: 4px;
+      min-width: 24px;
+    }
+
+    &.#{$nancalui-prefix}-button--lg {
+      .icon {
+        font-size: $nancalui-font-size-icon;
+      }
+
+      min-width: 32px;
+    }
+
+    &.#{$nancalui-prefix}-button--circle {
+      width: $nancalui-size-md;
+
+      &.#{$nancalui-prefix}-button--mini {
+        width: $nancalui-size-mini;
+      }
+
+      &.#{$nancalui-prefix}-button--sm {
+        width: $nancalui-size-sm;
+      }
+
+      &.#{$nancalui-prefix}-button--lg {
+        width: $nancalui-size-lg;
+      }
+    }
+  }
+
+  &:not(.#{$nancalui-prefix}-button__icon) {
+    .icon-fix {
+      font-size: $nancalui-font-size-icon;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-button__icon-fix {
+  position: relative;
+  font-size: $nancalui-font-size;
+}
+
+.button-content {
+  display: inline-block;
+  position: relative;
+}
+
+.clear-right-3 {
+  margin-right: 3px;
+}

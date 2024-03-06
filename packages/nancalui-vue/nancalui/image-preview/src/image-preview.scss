@@ -1,0 +1,125 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-image-preview {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $nancalui-z-index-full-page-overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  svg,
+  polygon,
+  g,
+  path {
+    fill: $nancalui-icon-text;
+  }
+  @mixin fixen-button() {
+    position: fixed;
+    z-index: $nancalui-z-index-full-page-overlay;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: $nancalui-highlight-overlay;
+    box-shadow: $nancalui-shadow-length-base $nancalui-light-shadow;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: $nancalui-area;
+    }
+
+    svg {
+      width: 38px;
+      height: 18px;
+    }
+  }
+
+  &__main-image {
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: -20px;
+    cursor: grab;
+  }
+
+  &__close-btn {
+    @include fixen-button();
+
+    top: 15px;
+    right: 20px;
+  }
+
+  &__arrow-left {
+    @include fixen-button();
+
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+
+  &__arrow-right {
+    @include fixen-button();
+
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+
+  &__toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $nancalui-highlight-overlay;
+    box-shadow: $nancalui-shadow-length-fullscreen-overlay $nancalui-light-shadow;
+
+    button {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      color: $nancalui-text;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      outline: 0;
+      padding: 0;
+    }
+
+    .#{$nancalui-prefix}-image-preview__index {
+      display: inline-flex;
+      width: 100px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    & > :not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-image-preview__bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: calc($nancalui-z-index-full-page-overlay - 1);
+  background: $nancalui-shadow;
+}

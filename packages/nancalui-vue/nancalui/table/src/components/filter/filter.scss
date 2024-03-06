@@ -1,0 +1,76 @@
+@import '../../../../styles-var/nancalui-var.scss';
+$nancalui-table-line: var(--nancalui-table-line);
+.filter-wrapper {
+  width: 200px;
+  background-color: $nancalui-connected-overlay-bg;
+  border-radius: $nancalui-border-radius;
+
+  .filter-all-check {
+    padding: 0 8px 4px;
+    border-bottom: 1px solid $nancalui-table-line;
+  }
+
+  .filter-multiple-menu {
+    width: 100%;
+    padding: 4px 8px;
+    border-bottom: 1px solid $nancalui-table-line;
+  }
+
+  .filter-operation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    height: 26px;
+  }
+
+  .filter-single-menu {
+    width: 100%;
+  }
+
+  .filter-item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.filter-icon {
+  flex: 1;
+  display: block;
+  height: 16px;
+  text-align: right;
+  cursor: pointer;
+
+  > svg g {
+    fill: $nancalui-dividing-line;
+  }
+
+  &:hover {
+    > svg g {
+      fill: $nancalui-icon-fill-active-hover;
+    }
+  }
+}
+
+.filter-item-active {
+  background: $nancalui-list-item-active-bg;
+  color: $nancalui-list-item-active-text;
+}
+
+.filter-icon-active {
+  visibility: visible !important;
+
+  > svg g {
+    fill: $nancalui-icon-fill-active;
+  }
+
+  &:hover {
+    > svg g {
+      fill: $nancalui-icon-fill-active-hover;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+ls:
+  /{packages}/*:
+    .dir: kebab-case | regex:__[a-z0-9]+__
+    .scss: kebab-case
+    .vue: kebab-case
+    .js: kebab-case | pointcase
+    .ts: kebab-case | pointcase
+    .tsx: kebab-case | pointcase
+    .spec.ts: kebab-case
+    .spec.tsx: kebab-case
+    .route.ts: kebab-case
+    .type.ts: kebab-case
+
+ignore:
+  # nancalui-cli
+  - packages/nancalui-cli/node_modules
+  # nancalui-theme
+  - packages/nancalui-theme/dist
+  - packages/nancalui-theme/build
+  - packages/nancalui-theme/node_modules
+  - packages/nancalui-theme/src/styles-var
+  # nancalui-vue
+  - packages/nancalui-vue/node_modules
+  - packages/nancalui-vue/build
+  - packages/nancalui-vue/docs
+  - packages/nancalui-vue/nancalui/style
+  - packages/nancalui-vue/nancalui/styles-var

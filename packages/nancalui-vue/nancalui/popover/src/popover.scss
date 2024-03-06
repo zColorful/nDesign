@@ -1,0 +1,67 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-popover__content.#{$nancalui-prefix}-flexible-overlay {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  white-space: nowrap;
+  padding: 10px;
+  line-height: 1.5;
+  border-radius:12px;
+  border-radius: $nancalui-border-radius-feedback;
+  color: $nancalui-text;
+  background-color: $nancalui-connected-overlay-bg;
+  font-size: $nancalui-font-size-sm;
+
+  &.is-icon {
+    flex-wrap: nowrap;
+  }
+}
+
+.#{$nancalui-prefix}-popover--fade {
+  &-bottom,
+  &-top {
+    &-enter-from,
+    &-leave-to {
+      opacity: 0.8;
+      transform: scaleY(0.8);
+    }
+
+    &-enter-to,
+    &-leave-from {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+
+    &-enter-active {
+      transition: transform 0.1s cubic-bezier(0.16, 0.75, 0.5, 1), opacity 0.1s cubic-bezier(0.16, 0.75, 0.5, 1);
+    }
+
+    &-leave-active {
+      transition: transform 0.1s cubic-bezier(0.5, 0, 0.84, 0.25), opacity 0.1s cubic-bezier(0.5, 0, 0.84, 0.25);
+    }
+  }
+
+  &-left,
+  &-right {
+    &-enter-from,
+    &-leave-to {
+      opacity: 0.8;
+      transform: scaleX(0.8);
+    }
+
+    &-enter-to,
+    &-leave-from {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    &-enter-active {
+      transition: transform 0.1s cubic-bezier(0.16, 0.75, 0.5, 1), opacity 0.1s cubic-bezier(0.16, 0.75, 0.5, 1);
+    }
+
+    &-leave-active {
+      transition: transform 0.1s cubic-bezier(0.5, 0, 0.84, 0.25), opacity 0.1s cubic-bezier(0.5, 0, 0.84, 0.25);
+    }
+  }
+}

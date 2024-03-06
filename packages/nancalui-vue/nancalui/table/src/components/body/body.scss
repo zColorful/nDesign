@@ -1,0 +1,160 @@
+@import '../../../../styles-var/nancalui-var.scss';
+
+$input-height-md: 28px;
+$nancalui-table-inset-shadow-left: var(--nancalui-table-inset-shadow-left, 8px 0 8px -4px);
+$nancalui-table-inset-shadow-right: var(--nancalui-table-inset-shadow-right, -8px 0 8px -4px);
+$nancalui-table-line: var(--nancalui-table-line);
+$nancalui-table-b-color: var(--nancalui-table-b-color);
+.#{$nancalui-prefix}-table {
+  &__tbody {
+    tr {
+      font-size: $nancalui-font-size;
+      color: $nancalui-table-b-color;
+      background-color: $nancalui-base-bg;
+      border: none;
+
+      &.hover-enabled:hover,&.is-highlight {
+        background-color: $nancalui-list-item-hover-bg;
+
+        .#{$nancalui-prefix}-table--last-sticky-left {
+          background: linear-gradient(to left, transparent, $nancalui-list-item-hover-bg 10px);
+        }
+
+        .#{$nancalui-prefix}-table--first-sticky-right,
+        .#{$nancalui-prefix}-table--sticky-cell {
+          background: linear-gradient(to right, transparent, $nancalui-list-item-hover-bg 10px);
+        }
+      }
+
+      &.select-row {
+        background-color: $nancalui-list-item-hover-bg;
+
+        .#{$nancalui-prefix}-table--last-sticky-left {
+          background: linear-gradient(to left, transparent, $nancalui-list-item-hover-bg 10px);
+        }
+
+        .#{$nancalui-prefix}-table--first-sticky-right,
+        .#{$nancalui-prefix}-table--sticky-cell {
+          background: linear-gradient(to right, transparent, $nancalui-list-item-hover-bg 10px);
+        }
+      }
+
+      td .icon-expand-row:hover {
+        cursor: pointer;
+      }
+
+      &.expanded td .icon-expand-row {
+        transform: rotate(45deg);
+      }
+
+      td {
+        // background-clip: padding-box;
+        // background-color: inherit;
+        vertical-align: middle;
+        line-height: 24px;
+        border: none;
+        border-bottom: 1px solid $nancalui-table-line;
+
+        &.is-left {
+          text-align: left;
+          padding-left:20px;
+        }
+
+        &.is-center {
+          text-align: center;
+        }
+
+        &.is-right {
+          text-align: right;
+        }
+
+        .editable-cell {
+          position: relative;
+          margin-left: -8px;
+          padding-left: 8px;
+          cursor: pointer;
+
+          &:hover::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: 1px solid $nancalui-line;
+            border-radius: $nancalui-border-radius;
+            pointer-events: none;
+          }
+        }
+
+        .#{$nancalui-prefix}-table__cell {
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          .cell-text {
+            height: 32px;
+            line-height: 32px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+
+    .is-hidden {
+      display: none;
+    }
+  }
+
+  &__lazy__flag {
+    width: 0;
+    height: 0;
+  }
+}
+
+.#{$nancalui-prefix}-table {
+  &--sticky-cell {
+    background-color: $nancalui-base-bg;
+    position: sticky;
+    z-index: 5;
+  }
+
+  &--scroll-middle,
+  &--scroll-right {
+    .#{$nancalui-prefix}-table--last-sticky-left {
+      background: linear-gradient(to left, transparent, $nancalui-base-bg 10px);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 10px;
+        pointer-events: none;
+        box-shadow: inset $nancalui-table-inset-shadow-left $nancalui-light-shadow;
+      }
+    }
+  }
+
+  &--scroll-middle,
+  &--scroll-left {
+    .#{$nancalui-prefix}-table--first-sticky-right {
+      background: linear-gradient(to right, transparent, $nancalui-base-bg 10px);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 10px;
+        pointer-events: none;
+        box-shadow: inset $nancalui-table-inset-shadow-right $nancalui-light-shadow;
+      }
+    }
+  }
+}

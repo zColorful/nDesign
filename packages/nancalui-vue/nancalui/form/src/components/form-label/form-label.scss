@@ -1,0 +1,59 @@
+@import '../../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-form__label {
+  align-self: center;
+  &--vertical {
+    align-self: flex-start;
+    padding-bottom: 8px;
+  }
+
+  &--sm {
+    flex: 0 0 80px;
+  }
+
+  &--md {
+    flex: 0 0 100px;
+  }
+
+  &--lg {
+    flex: 0 0 150px;
+  }
+
+  &--start {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--end {
+    text-align: end;
+  }
+}
+
+.#{$nancalui-prefix}-form__label-span {
+  display: inline-block;
+  vertical-align: middle;
+  color: $nancalui-form-label-color;
+  font-weight: 600;
+}
+
+.#{$nancalui-prefix}-form__label--required {
+  &::before {
+    content: '*';
+    color: #f52f3e;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+  }
+}
+
+.#{$nancalui-prefix}-form__label-help {
+  position: relative;
+  top: -0.1em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+  cursor: pointer;
+}

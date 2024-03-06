@@ -1,0 +1,90 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-rate--align {
+  font-size: $nancalui-font-size-icon;
+  margin-right: 5px;
+  position: relative;
+  line-height: 1;
+}
+
+.#{$nancalui-prefix}-rate--pointer {
+  cursor: pointer;
+}
+
+.#{$nancalui-prefix}-rate {
+  display: inline-flex;
+}
+
+.#{$nancalui-prefix}-rate__color-active {
+  i {
+    color: $nancalui-brand;
+  }
+
+  line-height: 1.5;
+
+  svg g {
+    fill: $nancalui-brand;
+  }
+}
+
+.#{$nancalui-prefix}-rate__color--success {
+  i {
+    color: #3dcca6;
+  }
+
+  svg g {
+    fill: #3dcca6;
+  }
+}
+
+.#{$nancalui-prefix}-rate__color--warning {
+  i {
+    color: #fac20a;
+  }
+
+  svg g {
+    fill: #fac20a;
+  }
+}
+
+.#{$nancalui-prefix}-rate__color--error {
+  i {
+    color: #f66f6a;
+  }
+
+  svg g {
+    fill: #f66f6a;
+  }
+}
+
+.#{$nancalui-prefix}-rate__color--customize {
+  color: var(--star-color);
+
+  svg g {
+    fill: var(--star-color);
+  }
+}
+
+.#{$nancalui-prefix}-rate__active-star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.#{$nancalui-prefix}-rate__color {
+  color: $nancalui-shape-icon-fill;
+  line-height: 1.5;
+
+  .icon {
+    color: $nancalui-shape-icon-fill !important;
+  }
+
+  svg g {
+    fill: $nancalui-shape-icon-fill;
+  }
+}
+
+.#{$nancalui-prefix}-rate--only-read {
+  cursor: not-allowed;
+}

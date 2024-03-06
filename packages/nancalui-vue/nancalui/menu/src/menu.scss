@@ -1,0 +1,22 @@
+$nancalui-menu-item-margin: 10px;
+
+// Menu
+
+// color
+$nancalui-menu-bg: var(--nancalui-menu-bg);
+$text-color: var(--nancalui-menu-text-color);
+$nancalui-menu-item: var(--nancalui-menu-item);
+$nancalui-menu-item-sub: var(--nancalui-menu-item-sub);
+$nancalui-menu-item-disabled: var(--nancalui-menu-disabled);
+$nancalui-menu-item-select: var(--nancalui-menu-item-hover);
+$nancalui-menu-item-hover: var(--nancalui-menu-item-hover);
+
+$nancalui-menu-item-selectBar: var(--nancalui-primary-hover, #447DFD);
+$nancalui-menu-active-parent: var(--nancalui-icon-fill-active);
+$nancalui-menu-bg-level: var(--nancalui-global-bg);
+
+@import '../../styles-var/nancalui-var.scss';
+@import './styles/clear.scss';
+@import './styles/horizontal.scss';
+@import './styles/vertical.scss';
+@import './styles/public.scss';

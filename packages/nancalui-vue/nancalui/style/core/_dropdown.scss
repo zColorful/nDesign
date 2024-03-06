@@ -1,0 +1,217 @@
+.#{$nancalui-prefix}-dropdown {
+  position: relative;
+  vertical-align: middle;
+
+  .#{$nancalui-prefix}-dropdown-toggle {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .#{$nancalui-prefix}-dropdown-toggle.#{$nancalui-prefix}-dropdown-default {
+    line-height: 1.5;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+    outline: 0;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+
+    &:not(.#{$nancalui-prefix}-dropdown-item) {
+      display: inline-flex !important;
+    }
+  }
+
+  .#{$nancalui-prefix}-caret {
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+
+  &.#{$nancalui-prefix}-dropdown-open .#{$nancalui-prefix}-dropdown-toggle span.icon-chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+.#{$nancalui-prefix}-dropdown-menu {
+  position: absolute;
+  float: left;
+  top: calc(100% - 1px);
+  left: 0;
+  z-index: 1000;
+  min-width: calc(min(100%, 102px));
+  margin: 4px 0;
+  padding-bottom: 5px;
+  background-clip: padding-box;
+  border-radius: 2px;
+  list-style: none;
+  background-color: $nancalui-connected-overlay-bg;
+  box-shadow: 0 2px 5px 0 $nancalui-shadow;
+  outline: none;
+
+  &.#{$nancalui-prefix}-dropdown-overlay,
+  &.#{$nancalui-prefix}-dropdown-overlay.popper-container {
+    border: 1px solid $nancalui-brand;
+  }
+
+  &.#{$nancalui-prefix}-dropdown-overlay.popper-container {
+    margin-top: -1px;
+    margin-bottom: -1px;
+  }
+
+  // .open > & {
+  //   display: block;
+  // }
+  > li {
+    position: relative;
+
+    > a {
+      height: 36px;
+      padding: 0 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  li > input {
+    margin: 0 10px;
+  }
+
+  > .disabled > a {
+    color: $nancalui-disabled-text;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
+  }
+
+  .#{$nancalui-prefix}-dropdown-item:not(.disabled) {
+    &:hover:not(:active) {
+      background-color: $nancalui-list-item-hover-bg;
+      color: $nancalui-list-item-hover-text;
+    }
+
+    &:active:hover {
+      background-color: $nancalui-list-item-active-bg;
+      color: $nancalui-list-item-active-text;
+    }
+
+    &.#{$nancalui-prefix}-dropdown-bg {
+      //箭头选中
+      background-color: $nancalui-list-item-hover-bg;
+      color: $nancalui-list-item-hover-text;
+    }
+
+    &.active {
+      color: $nancalui-list-item-active-text;
+      background-color: $nancalui-list-item-active-bg;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-form-group.#{$nancalui-prefix}-has-feedback {
+  & > .#{$nancalui-prefix}-form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    pointer-events: none;
+
+    &:hover {
+      position: absolute;
+    }
+
+    .#{$nancalui-prefix}-caret {
+      display: inline-block;
+      margin-left: 2px;
+      vertical-align: middle;
+      border-top: 4px solid;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+    }
+  }
+}
+
+.form-group.has-feedback[tabindex] {
+  outline: 0;
+}
+
+.#{$nancalui-prefix}-dropdown-no-border {
+  min-height: 28px;
+  min-width: calc(min(100%, 102px));
+  line-height: 1.5;
+  padding: 4px 10px;
+  border-radius: 2px;
+  text-align: center;
+  outline: 0;
+  background-image: none;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $nancalui-connected-overlay-bg;
+  color: $nancalui-text;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  border: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active:hover,
+  &:focus {
+    color: $nancalui-brand-active;
+  }
+}
+
+.#{$nancalui-prefix}-dropdown {
+  .#{$nancalui-prefix}-dropdown-default {
+    background-color: $nancalui-base-bg;
+    color: $nancalui-text;
+    border-color: $nancalui-form-control-line;
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $nancalui-form-control-line-hover;
+    }
+  }
+
+  .#{$nancalui-prefix}-dropdown-menu {
+    background: $nancalui-connected-overlay-bg;
+    box-shadow: 0 2px 5px 0 $nancalui-shadow;
+
+    > li > a:not(.disabled) {
+      color: $nancalui-text;
+
+      &:hover,
+      &:focus {
+        background-color: $nancalui-list-item-hover-bg;
+      }
+    }
+
+    > .disabled > a {
+      color: $nancalui-disabled-text;
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+}

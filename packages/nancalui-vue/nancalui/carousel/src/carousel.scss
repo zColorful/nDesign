@@ -1,0 +1,109 @@
+@import '../../styles-var/nancalui-var.scss';
+
+@mixin fixed-arrow-button() {
+  position: absolute;
+  top: -18px;
+  z-index: 2;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background: $nancalui-highlight-overlay;
+  box-shadow: $nancalui-shadow-length-hover $nancalui-light-shadow;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: $nancalui-area;
+  }
+
+  svg polygon {
+    fill: $nancalui-text;
+  }
+}
+
+.#{$nancalui-prefix}-carousel {
+  display: block;
+  position: relative;
+
+  .#{$nancalui-prefix}-carousel__arrow {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+
+    .arrow-left {
+      @include fixed-arrow-button();
+
+      left: 10px;
+    }
+
+    .arrow-right {
+      @include fixed-arrow-button();
+
+      right: 10px;
+    }
+  }
+
+  .#{$nancalui-prefix}-carousel__item-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    .#{$nancalui-prefix}-carousel__item-container {
+      display: flex;
+      height: 100%;
+      position: relative;
+
+      .#{$nancalui-prefix}-carousel__item {
+        flex: 1;
+        position: relative;
+        height: 100%;
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-carousel__dots {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+
+    &.bottom {
+      bottom: 8px;
+    }
+
+    &.top {
+      top: 8px;
+    }
+
+    .dot-item {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      margin-right: 8px;
+      background: $nancalui-icon-fill;
+
+      &:hover {
+        cursor: pointer;
+        background: $nancalui-icon-fill-hover;
+      }
+
+      &.active {
+        width: 24px;
+        background: $nancalui-icon-fill-active;
+        transition: all $nancalui-animation-duration-slow $nancalui-animation-ease-in-smooth;
+      }
+    }
+  }
+}
+
+.#{$nancalui-prefix}-carousel {
+  .#{$nancalui-prefix}-carousel__arrow {
+    .arrow-left,
+    .arrow-right {
+      transition: background-color $nancalui-animation-duration-slow $nancalui-animation-ease-in-smooth;
+    }
+  }
+}

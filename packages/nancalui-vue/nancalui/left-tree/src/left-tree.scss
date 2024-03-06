@@ -1,0 +1,209 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.left-tree {
+  width: 240px;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  transition: all 0.3s;
+  border-right: 1px solid #eeeeee;
+
+  .tree-top {
+    display: block;
+
+    .title {
+      height: 32px;
+      line-height: 28px;
+      background: #f2f3f6;
+      border-radius: 4px;
+      border: 2px solid #ffffff;
+      color: #333333;
+      font-size: 12px;
+      text-align: center;
+      font-weight: bolder;
+    }
+  }
+
+  &.hide {
+    width: 1px;
+    padding: 0;
+    margin-left: -2px;
+    background-color: #ffffff;
+    border-right: none;
+
+    .tree-top {
+      display: none;
+    }
+  }
+
+  .knob {
+    position: absolute;
+    width: 12px;
+    height: 80px;
+    background-color: #F0F7FF;
+    top: 0;
+    bottom: 0;
+    right: -12px;
+    z-index: 9;
+    margin: auto;
+    border-radius: 0 9px 9px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.hide {
+      border-radius: 0 9px 9px 0;
+      background-color: #ecf3ff;
+    }
+
+    .pic {
+      .nancalui-icon__container {
+        color: $nancalui-brand;
+      }
+
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-search {
+    padding: 20px 14px 0;
+  }
+
+  &-content-box {
+    position: relative;
+    height: calc(100% - 60px);
+    width: calc(100% - 20px);
+    margin: 20px auto 0;
+    box-sizing: border-box;
+    overflow-y: overlay; // 出现滚动条不会影响宽度
+  }
+
+  &-content {
+    padding-bottom: 10px;
+    width: 100%;
+    height: 100%;
+
+    .nancalui-tree__node-content--value-wrapper {
+      width: 100% !important;
+    }
+
+    .tree-node {
+      position: relative;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-start;
+      user-select: none;
+
+      &-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+        vertical-align: middle;
+
+        &.child {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      &-name {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+        color: #333333;
+        max-width: 132px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .parent {
+        color: #000000;
+        font-size: 12px;
+      }
+
+      &:hover {
+        .tree-node-name {
+          max-width: 58px;
+        }
+
+        .tree-node-control {
+          opacity: 1;
+
+          svg {
+            color: #333333;
+          }
+        }
+      }
+
+      &-control {
+        opacity: 0;
+        display: inline-block;
+        text-align: center;
+        position: absolute;
+        right: 0;
+
+        &-operation {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 12px;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          text-align: center;
+          border-radius: 4px;
+          margin-right: 4px;
+
+          &:hover {
+            background-color: #e2e6ec;
+          }
+        }
+      }
+    }
+  }
+}
+
+.popover-tree-body {
+  background-color: #ffffff;
+
+  .popover-tree-name {
+    width: 140px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 8px;
+    cursor: pointer;
+    color: #333333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .nancalui-icon__container {
+      width: 16px;
+      height: 16px;
+      line-height: normal;
+      margin-right: 4px;
+    }
+
+    &:hover {
+      background: #f7f8fa;
+    }
+  }
+}
+
+.nancalui-modal {
+  box-sizing: border-box;
+
+  .nancalui-modal-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nancalui-button {
+      margin: 0 6px;
+    }
+  }
+}

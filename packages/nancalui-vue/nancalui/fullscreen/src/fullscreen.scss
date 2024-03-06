@@ -1,0 +1,29 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  overflow: auto;
+  background-color: $nancalui-base-bg;
+}
+
+.#{$nancalui-prefix}-fullscreen__html {
+  overflow: hidden;
+}
+
+:not(:root):fullscreen::backdrop {
+  background: $nancalui-base-bg;
+}
+
+.fullScreenClass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+}

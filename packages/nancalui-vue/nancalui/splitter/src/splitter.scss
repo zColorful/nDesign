@@ -1,0 +1,17 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-splitter {
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-radius: $nancalui-border-radius;
+
+  &.#{$nancalui-prefix}-splitter--horizontal {
+    flex-direction: row;
+  }
+
+  &.#{$nancalui-prefix}-splitter--vertical {
+    flex-direction: column;
+  }
+}

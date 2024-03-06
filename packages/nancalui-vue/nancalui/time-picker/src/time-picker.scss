@@ -1,0 +1,19 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-time-picker {
+  width: 200px;
+
+  .time-input-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .clear-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-table__sort-clickable {
+  flex: 1;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 8px;
+  margin-right: 4px;
+  vertical-align: -0.55em;
+  cursor: pointer;
+  position: relative;
+  top: -2px;
+}

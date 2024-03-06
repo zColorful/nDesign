@@ -1,0 +1,164 @@
+@import '../../../styles-var/nancalui-var.scss';
+
+$sizes: sm, md, lg;
+$nancalui-font-size-md: 14px;
+$tabs-size-font-size: (
+  sm: $nancalui-font-size-md,
+  md: $nancalui-font-size-md,
+  lg: $nancalui-font-size-md,
+);
+
+$tabs-size-font-size_card: (
+  sm: $nancalui-font-size-md,
+  md: $nancalui-font-size-md,
+  lg: $nancalui-font-size-md,
+);
+
+$tabs-size-md-font-size_text: $nancalui-font-size-md;
+
+$tabs-size-font-size_pills: (
+  sm: $nancalui-font-size-md,
+  md: $nancalui-font-size-md,
+  lg: $nancalui-font-size-md,
+);
+
+$tabs-size-font-size_options: (
+  sm: $nancalui-font-size-md,
+  md: $nancalui-font-size-md,
+  lg: $nancalui-font-size-md,
+);
+
+$tabs-size-header-height_line: (
+  sm: 32px,
+  md: 40px,
+  lg: 48px,
+);
+
+$tabs-size-header-height_card: (
+  sm: 32px,
+  md: 40px,
+  lg: 48px,
+);
+
+$tabs-size-header-height_pills: (
+  sm: 30px,
+  md: 38px,
+  lg: 46px,
+);
+
+$tabs-size-header-height_options: (
+  sm: 32px,
+  md: 40px,
+  lg: 48px,
+);
+
+$tabs-size-md-header-height_text: 40px;
+$tabs-size-md-header-height_options: 40px;
+
+$tabs-padding-title-text-vertical: 10px;
+$tabs-padding-title-text-horizontal: 10px;
+
+$tabs-color-title-text: $nancalui-text;
+$tabs-color-title-text_active: $nancalui-primary;
+$tabs-color-title-text_hover: $nancalui-primary-hover;
+$tabs-color-title-text_disabled: $nancalui-disabled-text;
+$tabs-color-title-text_disabled_active: $nancalui-disabled-text;
+
+$color-transparent: transparent;
+
+$tabs-line-size-header-border: 1px;
+$tabs-line-color-header-border: $nancalui-line;
+$tabs-line-size-ink-stroke: 2px;
+$tabs-line-color-ink-bg: $nancalui-primary;
+$tabs-line-color-ink-bg_disabled: $nancalui-disabled-line;
+$tabs-line-font-title-text-weight_active: 500;
+$tabs-line-margin-title-horizontal: 40px;
+$tabs-line-margin-title-horizontal_first: 0;
+$tabs-line-margin-title-vertical: 6px;
+$tabs-line-padding-title-horizontal_vertical: 8px;
+$tabs-line-color-title-bg: $color-transparent;
+$tabs-line-color-title-bg_active: $color-transparent;
+$tabs-line-color-title-bg_hover: $color-transparent;
+
+$tabs-line-font-title-text-weight_hover: 400;
+$tabs-line-border-radius: 2px;
+
+$tabs-card-border-width: 1px;
+$tabs-card-color-title-border: #ebedf0;
+$tabs-card-padding-title-horizontal: 10px;
+$tabs-card-padding-title-vertical: 35px;
+$tabs-card-padding-title-right_editable: 10px;
+$tabs-card-border-radius: 4px;
+$tabs-card-color-title-bg: #f7f8fa;
+$tabs-card-color-title-bg_hover: #ebedf0;
+$tabs-card-color-title-bg_disabled: $tabs-card-color-title-bg;
+$tabs-card-color-title-bg_active: $color-transparent;
+$tabs-card-border-content-width: 1px;
+$tabs-card-color-bg_active: $color-transparent;
+$tabs-card-add-width: 40px;
+$tabs-card-add-height: 40px;
+
+$tabs-card-gutter-spacing-horizontal: 2px;
+$tabs-card-gutter-color-title-bg: #f7f8fa;
+$tabs-card-gutter-color-title-bg_hover: #ebedf0;
+$tabs-card-gutter-color-title-bg_active: $color-transparent;
+$tabs-card-gutter-color-title-bg_disabled: $tabs-card-gutter-color-title-bg;
+
+$tabs-text-size-separator-height: 24px;
+$tabs-text-size-separator-width: 2px;
+$tabs-text-color-separator-bg: $nancalui-line;
+$tabs-text-margin-title-horizontal: 20px;
+$tabs-text-color-title-bg: $color-transparent;
+$tabs-text-color-title-bg_active: $color-transparent;
+$tabs-text-color-title-bg_disabled: $color-transparent;
+$tabs-text-color-title-bg_disabled_active: $nancalui-brand-hover;
+$tabs-text-color-title-bg_hover: $color-transparent;
+
+$tabs-options-padding-title-vertical: 7px;
+$tabs-options-padding-title-horizontal: 23px;
+$tabs-options-color-title-bg: $color-transparent;
+$tabs-options-color-title-bg_active: #f0f7ff;
+$tabs-options-color-title-bg_disabled: #f7f8fa;
+$tabs-options-color-title-bg_hover: $tabs-options-color-title-bg;
+$tabs-options-border-radius: 4px;
+$tabs-options-border-content-width: 1px;
+$tabs-options-border-color: $nancalui-line;
+$tabs-options-border-color_hover: $nancalui-primary-hover;
+$tabs-options-border-color_active: $nancalui-primary;
+$tabs-options-border-color_disabled: $tabs-options-border-color;
+
+$tabs-pills-color-header-bg: $color-transparent;
+$tabs-pills-color-header-border: $nancalui-line;
+$tabs-pills-margin-title-horizontal: 3px;
+$tabs-pills-padding-title-horizontal: 30px;
+$tabs-pills-padding-title-vertical: 6px;
+$tabs-pills-padding-header-vertical: 4px;
+$tabs-pills-padding-header-horizontal: 4px;
+$tabs-pills-border-header-radius: 8px;
+$tabs-pills-border-header-inner-radius: 5px;
+$tabs-pills-border-header-border-width: 1px;
+
+$tabs-pills-color-title-bg: $color-transparent;
+$tabs-pills-color-title-bg_active: #eff1f5;
+$tabs-pills-color-title-bg_hover: $tabs-pills-color-title-bg_active;
+$tabs-pills-size-separator-width: 1px;
+$tabs-pills-size-separator-height: 14px;
+$tabs-pills-color-separator-bg: $color-transparent;
+
+$tabs-margin-close-icon-left: 4px;
+$tabs-size-icon: 16px;
+$tabs-size-icon-bg: 4px;
+$tabs-card-color-close-icon-bg_hover: $nancalui-brand-hover;
+$tabs-margin-add-icon-left: 4px;
+$tabs-color-icon: $nancalui-brand-hover;
+$tabs-color-icon_disabled: $nancalui-brand-hover;
+$tabs-spacing-nav-icon-header: 3px;
+$tabs-padding-header-wrapper-horizontal: 5px;
+$tabs-padding-header-wrapper-vertical: 3px;
+
+$tabs-content-padding: 10px;
+
+$transition-duration-2: 0.2s;
+$transition-timing-function-standard: cubic-bezier(0.34, 0.69, 0.1, 1);
+$transition-timing-function-linear: cubic-bezier(0, 0, 1, 1);
+$line-height-base: 1.5715;

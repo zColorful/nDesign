@@ -1,0 +1,172 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.no-left-padding {
+  &.#{$nancalui-prefix}-panel-body-collapse {
+    &::before {
+      content: none !important;
+    }
+
+    .#{$nancalui-prefix}-panel-content {
+      border-left: none !important;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-panel {
+  line-height: 1.5;
+  background-color: $nancalui-base-bg;
+
+  .#{$nancalui-prefix}-panel-heading {
+    padding: 12px 20px;
+    color: $nancalui-text;
+
+    n-panel-header {
+      line-height: 1.5;
+    }
+  }
+
+  .#{$nancalui-prefix}-panel-body {
+    display: flex;
+    position: relative;
+    border-top: 1px solid $nancalui-dividing-line;
+
+    .#{$nancalui-prefix}-panel-content {
+      line-height: 1.5;
+      padding: 15px;
+      background: $nancalui-base-bg;
+      flex: 1;
+    }
+
+    &.#{$nancalui-prefix}-panel-body-collapse {
+      &::before {
+        content: '';
+        width: 30px;
+        height: 100%;
+      }
+
+      .#{$nancalui-prefix}-panel-content {
+        border-left: 2px solid $nancalui-dividing-line;
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-panel-footer {
+    padding: 10px 15px;
+    color: $nancalui-text;
+    background-color: $nancalui-area;
+
+    n-panel-footer {
+      line-height: 1.5;
+    }
+  }
+
+  &.#{$nancalui-prefix}-panel-default {
+    .#{$nancalui-prefix}-panel-heading,
+    .#{$nancalui-prefix}-panel-body {
+      background-color: $nancalui-default-bg;
+    }
+  }
+
+  &.#{$nancalui-prefix}-panel-primary {
+    .#{$nancalui-prefix}-panel-heading,
+    .#{$nancalui-prefix}-panel-body {
+      background-color: $nancalui-primary-bg;
+    }
+
+    .#{$nancalui-prefix}-panel-body-collapse {
+      .#{$nancalui-prefix}-panel-content {
+        border-color: $nancalui-primary-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-panel-info {
+    .#{$nancalui-prefix}-panel-heading,
+    .#{$nancalui-prefix}-panel-body {
+      background-color: $nancalui-info-bg;
+    }
+
+    .#{$nancalui-prefix}-panel-body-collapse {
+      .#{$nancalui-prefix}-panel-content {
+        border-color: $nancalui-info-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-panel-success {
+    .#{$nancalui-prefix}-panel-heading,
+    .#{$nancalui-prefix}-panel-body {
+      background-color: $nancalui-success-bg;
+    }
+
+    .#{$nancalui-prefix}-panel-body-collapse {
+      .#{$nancalui-prefix}-panel-content {
+        border-color: $nancalui-success-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-panel-warning {
+    .#{$nancalui-prefix}-panel-heading,
+    .#{$nancalui-prefix}-panel-body {
+      background-color: $nancalui-warning-bg;
+    }
+
+    .#{$nancalui-prefix}-panel-body-collapse {
+      .#{$nancalui-prefix}-panel-content {
+        border-color: $nancalui-warning-line;
+      }
+    }
+  }
+
+  &.#{$nancalui-prefix}-panel-danger {
+    .#{$nancalui-prefix}-panel-heading,
+    .#{$nancalui-prefix}-panel-body {
+      background-color: $nancalui-danger-bg;
+    }
+
+    .#{$nancalui-prefix}-panel-body-collapse {
+      .#{$nancalui-prefix}-panel-content {
+        border-color: $nancalui-danger-line;
+      }
+    }
+  }
+
+  .#{$nancalui-prefix}-panel-leave-active {
+    transition: all 0.3s ease-in-out;
+    animation: panelUpOut 0.3s ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  .#{$nancalui-prefix}-panel-enter-active {
+    transition: all 0.3s ease-in-out;
+    animation: panelUpIn 0.3s ease-in-out;
+    animation-fill-mode: both;
+  }
+  @keyframes panelUpOut {
+    0% {
+      transform: scaleY(1);
+      transform-origin: 0% 0%;
+      opacity: 1;
+    }
+
+    100% {
+      transform: scaleY(0);
+      transform-origin: 0% 0%;
+      opacity: 0;
+    }
+  }
+  @keyframes panelUpIn {
+    0% {
+      transform: scaleY(0);
+      transform-origin: 0% 0%;
+      opacity: 0;
+    }
+
+    100% {
+      transform: scaleY(1);
+      transform-origin: 0% 0%;
+      opacity: 1;
+    }
+  }
+}

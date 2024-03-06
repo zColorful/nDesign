@@ -1,0 +1,26 @@
+@import '../../../style/mixins/flex';
+@import '../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-cascader {
+  &__ul {
+    height: 168px;
+    background: $nancalui-connected-overlay-bg;
+    display: block;
+    list-style: none;
+    margin: 0;
+    overflow-y: auto;
+    border-left: 1px solid $nancalui-dividing-line;
+    padding: 4px;
+  }
+
+  &__drop-no-data {
+    color: $nancalui-disabled-text;
+    height: 50px;
+    overflow-y: hidden;
+    background-color: $nancalui-disabled-bg;
+    font-size: $nancalui-font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

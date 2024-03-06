@@ -1,0 +1,208 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-input-group {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  border-collapse: separate;
+  width: 360px;
+}
+
+.#{$nancalui-prefix}-input-group:not(.disabled):hover .#{$nancalui-prefix}-input-group-addon {
+  border-color: $nancalui-form-control-line-active;
+  background-color: $nancalui-dividing-line;
+  font-weight: bold;
+}
+
+.#{$nancalui-prefix}-input-group:not(.disabled):hover .#{$nancalui-prefix}-form-control {
+  border-color: $nancalui-form-control-line-active;
+  border-right-color: $nancalui-form-control-line;
+}
+
+.#{$nancalui-prefix}-input-group:not(.disabled) .#{$nancalui-prefix}-input-group-addon:active {
+  border-color: $nancalui-form-control-line-active;
+  border-right-color: $nancalui-form-control-line;
+  background-color: $nancalui-dividing-line;
+}
+
+.#{$nancalui-prefix}-input-group .#{$nancalui-prefix}-input-group-addon {
+  width: 36px;
+  white-space: nowrap;
+  font-size: $nancalui-font-size-icon;
+  font-weight: normal;
+  color: $nancalui-text;
+  background-color: $nancalui-area;
+  border: 1px solid $nancalui-form-control-line;
+  border-radius: 0 $nancalui-border-radius $nancalui-border-radius 0;
+  transition:
+    border-color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth,
+    background-color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+  cursor: pointer;
+  align-self: normal;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.#{$nancalui-prefix}-input-group .#{$nancalui-prefix}-form-control {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 4px 8px;
+  font-size: $nancalui-font-size;
+  line-height: 32px;
+  background-image: none;
+  border: 1px solid $nancalui-form-control-line;
+  // border-radius: $nancalui-border-radius 0 0 $nancalui-border-radius;
+  // border-right: none;
+  transition:
+    border-color $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth,
+    box-shadow $nancalui-animation-duration-slow $nancalui-animation-ease-in-out-smooth;
+
+  &.#{$nancalui-prefix}-upload__files-list {
+    max-height: 52px;
+    padding: 0 3px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 100%;
+    margin: 0;
+
+    .#{$nancalui-prefix}-upload__file-item {
+      height: 26px;
+      line-height: 26px;
+      padding: 0 48px 0 12px;
+      margin-right: 2px;
+    }
+
+    .#{$nancalui-prefix}-upload__file-tag {
+      position: relative;
+      background-color: $nancalui-label-bg;
+      border-radius: $nancalui-border-radius;
+      max-width: 100%;
+
+      .#{$nancalui-prefix}-upload__filename {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .icon {
+        position: absolute;
+        cursor: pointer;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.icon-right {
+          color: $nancalui-success;
+        }
+
+        &.icon-running {
+          font-size: 16px;
+        }
+
+        &.#{$nancalui-prefix}-upload__delete-file-button {
+          margin-right: 20px;
+        }
+
+        &.#{$nancalui-prefix}-upload__delete {
+          display: none;
+        }
+      }
+
+      &:hover {
+        .#{$nancalui-prefix}-upload__progress,
+        .icon-right {
+          display: none;
+        }
+
+        .icon-close {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.#{$nancalui-prefix}-input-group {
+  &.disabled {
+    .#{$nancalui-prefix}-upload__placeholder {
+      color: $nancalui-disabled-text;
+    }
+  }
+
+  .#{$nancalui-prefix}-upload__placeholder {
+    max-height: 32px;
+    line-height: 22px;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $nancalui-placeholder;
+  }
+}
+
+.#{$nancalui-prefix}-input-group .#{$nancalui-prefix}-upload__progress {
+  width: 16px;
+  height: 16px;
+}
+
+.#{$nancalui-prefix}-input-group.disabled .#{$nancalui-prefix}-form-control,
+.#{$nancalui-prefix}-input-group.disabled .#{$nancalui-prefix}-input-group-addon {
+  cursor: not-allowed;
+  background-color: $nancalui-disabled-bg;
+  border-color: $nancalui-disabled-line;
+  color: $nancalui-disabled-text;
+}
+
+.#{$nancalui-prefix}-form-control {
+  outline: none;
+}
+
+.#{$nancalui-prefix}-input-group.disabled .#{$nancalui-prefix}-upload__delete-file-button {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.#{$nancalui-prefix}-loading {
+  color: $nancalui-aide-text;
+}
+
+.#{$nancalui-prefix}-upload--failed-color {
+  color: $nancalui-danger;
+}
+
+.#{$nancalui-prefix}-upload {
+  display: flex;
+}
+
+.#{$nancalui-prefix}-upload-tip {
+  height: 18px;
+  margin-top: 8px;
+  font-size: 12px;
+
+  .icon {
+    margin-right: 8px;
+    font-size: 16px;
+    vertical-align: middle;
+  }
+
+  .icon-right-o {
+    color: $nancalui-success;
+  }
+
+  .#{$nancalui-prefix}-upload-failed {
+    color: $nancalui-danger;
+  }
+
+  a {
+    color: $nancalui-link;
+    cursor: pointer;
+  }
+}

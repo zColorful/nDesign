@@ -1,0 +1,10 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-list {
+  padding-bottom: 4px;
+  border-radius: $nancalui-border-radius;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  background-color: $nancalui-connected-overlay-bg;
+  outline: none;
+}

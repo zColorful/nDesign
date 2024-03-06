@@ -1,0 +1,8 @@
+{
+  "folders": [
+    { "name": "root", "path": "." },
+    { "name": "nancalui-cli", "path": "./packages/nancalui-cli" },
+    { "name": "nancalui-theme", "path": "./packages/nancalui-theme" },
+    { "name": "nancalui-vue", "path": "./packages/nancalui-vue" }
+  ]
+}

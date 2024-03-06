@@ -1,0 +1,61 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-status {
+  line-height: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    border-radius: 100%;
+  }
+}
+
+.#{$nancalui-prefix}-status.#{$nancalui-prefix}-status__bg {
+  &--success {
+    &::before {
+      background-color: $nancalui-success;
+    }
+  }
+
+  &--error {
+    &::before {
+      background-color: $nancalui-danger;
+    }
+  }
+
+  &--warning {
+    &::before {
+      background-color: $nancalui-warning;
+    }
+  }
+
+  &--initial {
+    &::before {
+      background-color: $nancalui-initial;
+    }
+  }
+
+  &--waiting {
+    &::before {
+      background-color: $nancalui-waiting;
+    }
+  }
+
+  &--running {
+    &::before {
+      background-color: $nancalui-info;
+    }
+  }
+
+  &--invalid {
+    &::before {
+      background-color: $nancalui-dividing-line;
+    }
+  }
+}

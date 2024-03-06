@@ -1,0 +1,171 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-step {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+
+  &:last-child {
+    &:not(.center):not(.#{$nancalui-prefix}-step--simple) {
+      flex-basis: auto !important;
+    }
+
+    flex-shrink: 0;
+
+    .#{$nancalui-prefix}-step__line {
+      display: none;
+    }
+  }
+
+  &__dot-container {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__dot {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $nancalui-brand-foil;
+    color: $nancalui-light-text;
+  }
+
+  &__line {
+    position: absolute;
+    top: 12px;
+    left: 32px;
+    width: calc(100% - 40px);
+    height: 2px;
+    background-color: $nancalui-line;
+  }
+
+  &__title {
+    color: $nancalui-text-weak;
+  }
+
+  &__description {
+    color: $nancalui-text-weak;
+    font-size: 12px;
+  }
+
+  &.active {
+    .#{$nancalui-prefix}-step__dot {
+      background-color: $nancalui-brand;
+      color: $nancalui-light-text;
+    }
+
+    .#{$nancalui-prefix}-step__title{
+      color:$nancalui-text;
+    }
+    .#{$nancalui-prefix}-step__description {
+      color: $nancalui-text-weak;
+    }
+  }
+
+  &.finished {
+    .#{$nancalui-prefix}-step__dot {
+      background-color: $nancalui-brand;
+    }
+
+    .#{$nancalui-prefix}-step__line {
+      background-color: $nancalui-brand;
+    }
+
+    .#{$nancalui-prefix}-step__title{
+      color:$nancalui-text;
+    }
+    .#{$nancalui-prefix}-step__description {
+      color: $nancalui-text-weak;
+    }
+  }
+
+  &.center {
+    text-align: center;
+
+    .#{$nancalui-prefix}-step__line {
+      left: calc(50% + 20px);
+    }
+  }
+
+  // 步骤条状态
+  &.wait {
+    .nancalui-step__dot {
+      background-color: $nancalui-brand-foil;
+      color: $nancalui-text;
+    }
+
+    .nancalui-step__title {
+      color: $nancalui-placeholder;
+    }
+  }
+
+  &.process {
+    .nancalui-step__dot {
+      background-color: $nancalui-brand;
+      color: $nancalui-light-text;
+    }
+
+    .nancalui-step__title {
+      color: $nancalui-brand;
+    }
+  }
+
+  &.finish {
+    .nancalui-step__dot {
+      background-color: $nancalui-brand;
+      color: $nancalui-light-text;
+    }
+
+    .nancalui-step__title {
+      color: $nancalui-brand;
+    }
+  }
+
+  &.success {
+    .nancalui-step__dot {
+      background-color: $nancalui-brand;
+      color: $nancalui-light-text;
+    }
+
+    .nancalui-step__title {
+      color: $nancalui-brand;
+    }
+  }
+
+  &.error {
+    .nancalui-step__dot {
+      background-color: $nancalui-danger;
+      color: $nancalui-light-text;
+    }
+
+    .nancalui-step__title {
+      color: $nancalui-danger;
+    }
+  }
+
+  &.label-right {
+    .nancalui-step__dot-container {
+      display: flex;
+      align-items: center;
+
+      .nancalui-step__content {
+        padding: 0 16px 0 10px;
+      }
+
+      .nancalui-step__line {
+        position: unset;
+        height: 1px;
+        width: 20px;
+        flex: 1;
+        margin-right: 16px;
+      }
+    }
+  }
+}

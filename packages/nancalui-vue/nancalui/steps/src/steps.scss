@@ -1,0 +1,104 @@
+@use 'sass:math';
+
+@import '../../styles-var/nancalui-var.scss';
+
+$simple-step-height: 36;
+$simple-step-space: 8;
+
+.#{$nancalui-prefix}-steps {
+  display: flex;
+
+  &.vertical {
+    flex-direction: column;
+    height: 100%;
+
+    .#{$nancalui-prefix}-step {
+      flex-direction: row;
+
+      &__line {
+        width: 2px;
+        height: calc(100% - 40px);
+        left: 12px;
+        top: 32px;
+      }
+
+      &__content {
+        margin-left: 8px;
+        padding-top: 2px;
+      }
+    }
+  }
+
+  &.simple {
+    .#{$nancalui-prefix}-step {
+      position: relative;
+      height: #{$simple-step-height}px;
+      line-height: #{$simple-step-height}px;
+      text-align: center;
+      background-color: $nancalui-brand-foil;
+      color: $nancalui-text;
+
+      &:not(:first-child) {
+        margin-left: #{math.div($simple-step-height, 2)}px;
+      }
+
+      &:not(:last-child) {
+        margin-right: 14px;
+      }
+
+      &:not(:first-child)::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -#{$simple-step-height - $simple-step-space}px;
+        top: 0;
+        border: solid #{math.div($simple-step-height, 2)}px transparent;
+        border-top-color: $nancalui-brand-foil;
+        border-right-color: $nancalui-brand-foil;
+        border-bottom-color: $nancalui-brand-foil;
+      }
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -#{$simple-step-height}px;
+        top: 0;
+        border: solid #{math.div($simple-step-height, 2)}px transparent;
+        border-left-color: $nancalui-brand-foil;
+      }
+
+      &.active {
+        background-color: $nancalui-brand;
+        color: $nancalui-light-text;
+
+        &::before {
+          border-top-color: $nancalui-brand;
+          border-right-color: $nancalui-brand;
+          border-bottom-color: $nancalui-brand;
+        }
+
+        &::after {
+          border-left-color: $nancalui-brand;
+        }
+      }
+
+      &.finished {
+        background-color: $nancalui-brand;
+        color: $nancalui-light-text;
+
+        &::before {
+          border-top-color: $nancalui-brand;
+          border-right-color: $nancalui-brand;
+          border-bottom-color: $nancalui-brand;
+        }
+
+        &::after {
+          border-left-color: $nancalui-brand;
+        }
+      }
+    }
+  }
+}

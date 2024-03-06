@@ -1,0 +1,25 @@
+import { defineComponent, useSlots, renderSlot, ref, SetupContext } from 'vue';
+import { fullscreenProps, FullscreenProps } from './fullscreen-types';
+import useKeydown from './composables/use-keydown';
+import useFullscreen from './composables/use-fullscreen';
+import './fullscreen.scss';
+
+export default defineComponent({
+  name: 'NFullscreen',
+  props: fullscreenProps,
+  emits: ['update:modelValue'],
+  setup(props: FullscreenProps, ctx: SetupContext) {
+    const slotElement = ref();
+    useFullscreen(props, slotElement, ctx);
+    useKeydown(props, ctx);
+
+    return () => {
+      const defaultSlot = renderSlot(useSlots(), 'default');
+      return (
+        <div class={props.modelValue ? 'fullScreenClass' : ''} ref={slotElement}>
+          {defaultSlot}
+        </div>
+      );
+    };
+  },
+});

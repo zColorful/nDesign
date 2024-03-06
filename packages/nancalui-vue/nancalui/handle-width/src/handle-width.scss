@@ -1,0 +1,14 @@
+.xhandle {
+  cursor: ew-resize;
+  z-index: 10;
+  border-left: 1px solid #eeeeee;
+  // text-overflow: inherit;
+  word-break: break-all;
+  position: relative;
+
+  &.height {
+    cursor: ns-resize;
+    width: 100%;
+    border-top: 1px solid #eeeeee;
+  }
+}

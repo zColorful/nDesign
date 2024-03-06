@@ -1,0 +1,174 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-table-v {
+  font-size: $nancalui-font-size-md;
+  position: relative;
+
+  .#{$nancalui-prefix}-table-v__main {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    overflow: hidden;
+    // top: 0;
+    background-color: var(--nancalui-table-bg);
+    // left: 0;
+  }
+
+  &:hover {
+    .#{$nancalui-prefix}-scrollbar__thumb {
+      opacity: 0.5;
+    }
+  }
+}
+
+.#{$nancalui-prefix}-table-v:not(.is-dynamic) .#{$nancalui-prefix}-table-v__cell-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.#{$nancalui-prefix}-table-v__main {
+  .#{$nancalui-prefix}-virtual-scrollbar {
+    z-index: 666;
+  }
+}
+
+.#{$nancalui-prefix}-vl__wrapper {
+  position: relative;
+  box-sizing: border-box;
+
+  .#{$nancalui-prefix}-table-v__row {
+    border-bottom: 1px solid #ebedf0;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+
+  .#{$nancalui-prefix}-scrollbar__thumb {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: rgb(144, 147, 153);
+    transition: 0.3s background-color;
+    opacity: 0;
+  }
+}
+
+.#{$nancalui-prefix}-table-v__header-wrapper {
+  overflow: hidden;
+
+  .#{$nancalui-prefix}-table-v-header__header {
+    position: relative;
+    overflow: hidden;
+    background: $nancalui-gray-5;
+
+    .#{$nancalui-prefix}-table-v__header-row {
+      display: flex;
+      border-bottom: 1px solid #ebedf0;
+
+      .#{$nancalui-prefix}-table-v__header-cell {
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        height: 100%;
+        user-select: none;
+        overflow: hidden;
+        background: $nancalui-gray-5;
+        font-weight: $nancalui-font-title-weight;
+        color: #333333;
+      }
+    }
+  }
+}
+
+.#{$nancalui-prefix}-table-v__left {
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  background-color: #ffffff;
+  left: 0;
+  box-shadow: 2px 0 4px #0000000f;
+
+  .#{$nancalui-prefix}-scrollbar__thumb {
+    opacity: 0 !important;
+  }
+}
+
+.#{$nancalui-prefix}-table-v__right {
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  background-color: #ffffff;
+  right: 0;
+  box-shadow: -2px 0 4px 0 rgba(0, 0, 0, 0.06);
+
+  .#{$nancalui-prefix}-scrollbar__thumb {
+    opacity: 0 !important;
+  }
+}
+
+.#{$nancalui-prefix}-table-v__row {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ebedf0;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.#{$nancalui-prefix}-table-v__row-cell {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.#{$nancalui-prefix}-table-v__expand-icon {
+  margin: 0 4px;
+  cursor: pointer;
+  user-select: none;
+
+  .is-expanded {
+    transform: rotate(90deg);
+  }
+}
+
+.#{$nancalui-prefix}-table-v__footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.#{$nancalui-prefix}-table-v__empty {
+  position: absolute;
+  left: 0;
+}
+
+.#{$nancalui-prefix}-table-v__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+.el-loading-mask {
+  position: absolute;
+  z-index: 2000;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 0.3s;
+}

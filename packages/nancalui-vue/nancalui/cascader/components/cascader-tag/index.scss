@@ -1,0 +1,40 @@
+@import '../../../styles-var/nancalui-var.scss';
+
+$tag-bg-color: #eff1f5;
+
+.#{$nancalui-prefix}-cascader-tag {
+  margin: 2px 4px 2px 0;
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  padding: 0 8px 0 8px;
+  background-color: $tag-bg-color;
+  border-radius: $nancalui-border-radius;
+  border: 0 solid inherit;
+
+  span {
+    min-height: 20px;
+    line-height: 20px;
+    font-size: $nancalui-font-size;
+    color: $nancalui-text;
+    position: relative;
+    cursor: default;
+  }
+
+  &__close {
+    margin-left: 12px;
+    font-size: $nancalui-font-size;
+    cursor: pointer;
+    color: #ffffff;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+
+    &:hover {
+      color: $nancalui-brand;
+    }
+  }
+}

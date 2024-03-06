@@ -1,0 +1,187 @@
+// 基础色值
+
+// 取色规则1： 所有使用颜色均需要在色板中选择
+// 取色规则2： 除标签等用于功能分类及black,white的取色可以增加透明度(eg: rgba($nancalui-white-5,0.3)，其余场景均不允许
+
+$nancalui-blue-5: #f2f5fc;
+$nancalui-blue-10: #F0F7FF;
+$nancalui-blue-20: #94dfff;
+$nancalui-blue-30: #67c7ff;
+$nancalui-blue-40: #6E9EFF;
+$nancalui-blue-50: #447DFD;
+$nancalui-blue-60: #2F5CD6;
+$nancalui-blue-70: #465eb8;
+$nancalui-blue-80: #3c51a6;
+$nancalui-blue-90: #0069af;
+$nancalui-blue-100: #2a3c85;
+
+$nancalui-sky-5: #ebf6ff;
+$nancalui-sky-10: #d1ebff;
+$nancalui-sky-20: #b8e0ff;
+$nancalui-sky-30: #9ed5ff;
+$nancalui-sky-40: #85caff;
+$nancalui-sky-50: #6cbfff;
+$nancalui-sky-60: #4ea6e6;
+$nancalui-sky-70: #3590cc;
+$nancalui-sky-80: #207ab3;
+$nancalui-sky-90: #0f6999;
+$nancalui-sky-100: #035880;
+
+$nancalui-green-5: #E6FFF4;
+$nancalui-green-10: #cffcee;
+$nancalui-green-20: #72eab5;
+$nancalui-green-30: #44da97;
+$nancalui-green-40: #28cf85;
+$nancalui-green-50: #04C495;
+$nancalui-green-60: #0aae65;
+$nancalui-green-70: #27b080;
+$nancalui-green-80: #169e6c;
+$nancalui-green-90: #019553;
+$nancalui-green-100: #007a45;
+
+$nancalui-lime-5: #f0ffe6;
+$nancalui-lime-10: #e5ffd4;
+$nancalui-lime-20: #d8fcc0;
+$nancalui-lime-30: #c5f2a7;
+$nancalui-lime-40: #b3e890;
+$nancalui-lime-50: #04C495;
+$nancalui-lime-60: #92cc68;
+$nancalui-lime-70: #7eba50;
+$nancalui-lime-80: #6ca83b;
+$nancalui-lime-90: #5e9629;
+$nancalui-lime-100: #518519;
+
+$nancalui-yellow-5: #FFF6E6;
+$nancalui-yellow-10: #fff1c2;
+$nancalui-yellow-20: #ffce7d;
+$nancalui-yellow-30: #ffc159;
+$nancalui-yellow-40: #ffb436;
+$nancalui-yellow-50: #FF7D00;
+$nancalui-yellow-60: #ea960c;
+$nancalui-yellow-70: #cc9600;
+$nancalui-yellow-80: #b58200;
+$nancalui-yellow-90: #d28300;
+$nancalui-yellow-100: #875c00;
+
+$nancalui-orange-5: #fff3e8;
+$nancalui-orange-10: #ffe1c7;
+$nancalui-orange-20: #ffd0a6;
+$nancalui-orange-30: #ffbf85;
+$nancalui-orange-40: #ffad63;
+$nancalui-orange-50: #fa9841;
+$nancalui-orange-60: #e37d29;
+$nancalui-orange-70: #cc6414;
+$nancalui-orange-80: #b54e04;
+$nancalui-orange-90: #9e3f00;
+$nancalui-orange-100: #873400;
+
+$nancalui-red-5: #FFF2F0;
+$nancalui-red-10: #ffd5d4;
+$nancalui-red-20: #ffabac;
+$nancalui-red-30: #ff7779;
+$nancalui-red-40: #ff595b;
+$nancalui-red-50: #F63838;
+$nancalui-red-60: #e72b2d;
+$nancalui-red-70: #c73636;
+$nancalui-red-80: #b02121;
+$nancalui-red-90: #c80e10;
+$nancalui-red-100: #820404;
+
+$nancalui-magenta-5: #ffedf3;
+$nancalui-magenta-10: #ffd4e3;
+$nancalui-magenta-20: #ffbad2;
+$nancalui-magenta-30: #ffa1c2;
+$nancalui-magenta-40: #fc86b0;
+$nancalui-magenta-50: #F63838;
+$nancalui-magenta-60: #db4d83;
+$nancalui-magenta-70: #c4356e;
+$nancalui-magenta-80: #ad215b;
+$nancalui-magenta-90: #96114d;
+$nancalui-magenta-100: #800440;
+
+$nancalui-purple-5: #f5f0ff;
+$nancalui-purple-10: #e7d9ff;
+$nancalui-purple-20: #d8c2ff;
+$nancalui-purple-30: #caabff;
+$nancalui-purple-40: #bc94ff;
+$nancalui-purple-50: #a97af8;
+$nancalui-purple-60: #8a5ce0;
+$nancalui-purple-70: #6f42c9;
+$nancalui-purple-80: #572db3;
+$nancalui-purple-90: #3f1a9c;
+$nancalui-purple-100: #2a0c85;
+
+$nancalui-gray-5: #F7F8FA;
+$nancalui-gray-10: #ebebeb;
+$nancalui-gray-20: #e0e0e0;
+$nancalui-gray-30: #d1d1d1;
+$nancalui-gray-40: #bdbdbd;
+$nancalui-gray-50: #8a8a8a;
+$nancalui-gray-60: #878787;
+$nancalui-gray-70: #707070;
+$nancalui-gray-80: #5c5c5c;
+$nancalui-gray-90: #474747;
+$nancalui-gray-100: #383838;
+
+$nancalui-slate-5: #f7f8fa;
+$nancalui-slate-10: #ebedf0;
+$nancalui-slate-20: #e1e1e1;
+$nancalui-slate-30: #cfcfcf;
+$nancalui-slate-40: #cfd0d3;
+$nancalui-slate-50: #c8c9cc;
+$nancalui-slate-60: #9b9fa8;
+$nancalui-slate-70: #999999;
+$nancalui-slate-80: #666666;
+$nancalui-slate-90: #444444;
+$nancalui-slate-100: #333333;
+
+$nancalui-zinc-5: #f8f8fa;
+$nancalui-zinc-10: #f7f8fa;
+$nancalui-zinc-20: #e2e2e6;
+$nancalui-zinc-30: #d5d5db;
+$nancalui-zinc-40: #c7c7d1;
+$nancalui-zinc-50: #aeaebd;
+$nancalui-zinc-60: #9696a3;
+$nancalui-zinc-70: #7a7a85;
+$nancalui-zinc-80: #63636b;
+$nancalui-zinc-90: #494952;
+$nancalui-zinc-100: #37373d;
+
+$nancalui-dark-gray-5: #16181a;
+$nancalui-dark-gray-10: #202124;
+$nancalui-dark-gray-20: #292a2e;
+$nancalui-dark-gray-30: #2e2f33;
+$nancalui-dark-gray-40: #323338;
+$nancalui-dark-gray-50: #393a3e;
+$nancalui-dark-gray-60: #4e5057;
+$nancalui-dark-gray-70: #696c75;
+$nancalui-dark-gray-80: #868a99;
+$nancalui-dark-gray-90: #acb0bd;
+$nancalui-dark-gray-100: #ced1db;
+
+$nancalui-dark-slate-5: #0e111a;
+$nancalui-dark-slate-10: #141721;
+$nancalui-dark-slate-20: #1a1e29;
+$nancalui-dark-slate-30: #232633;
+$nancalui-dark-slate-40: #2c303e;
+$nancalui-dark-slate-50: #33384b;
+$nancalui-dark-slate-60: #444b61;
+$nancalui-dark-slate-70: #626a85;
+$nancalui-dark-slate-80: #878ea8;
+$nancalui-dark-slate-90: #a3aac2;
+$nancalui-dark-slate-100: #c1c7db;
+
+$nancalui-dark-zinc-5: #1a1a1c;
+$nancalui-dark-zinc-10: #212124;
+$nancalui-dark-zinc-20: #28282b;
+$nancalui-dark-zinc-30: #2f2f33;
+$nancalui-dark-zinc-40: #353537;
+$nancalui-dark-zinc-50: #3d3d42;
+$nancalui-dark-zinc-60: #4b4b52;
+$nancalui-dark-zinc-70: #575861;
+$nancalui-dark-zinc-80: #767680;
+$nancalui-dark-zinc-90: #9898a3;
+$nancalui-dark-zinc-100: #b7b7c7;
+
+$nancalui-white-5: #ffffff;
+$nancalui-black-5: #000000;

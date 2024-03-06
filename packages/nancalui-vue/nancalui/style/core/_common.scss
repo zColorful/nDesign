@@ -1,0 +1,93 @@
+.over-flow-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.clear-fix::after {
+  content: '';
+  display: block;
+  width: 0;
+  clear: both;
+}
+
+.#{$nancalui-prefix}-close {
+  float: right;
+  font-weight: bold;
+  line-height: 20px;
+  height: 20px;
+  color: $nancalui-text;
+  text-shadow: 0 1px 0 #ffffff;
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+
+  &:hover,
+  &:focus {
+    color: $nancalui-text;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+}
+
+button.#{$nancalui-prefix}-close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+a:hover,
+a:focus {
+  color: $nancalui-link;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+.#{$nancalui-prefix}-link {
+  color: $nancalui-link;
+
+  &:hover {
+    color: $nancalui-link-active;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.#{$nancalui-prefix}-link-light {
+  color: $nancalui-link-light;
+
+  &:hover {
+    color: $nancalui-link-light-active;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.#{$nancalui-prefix}-disabled {
+  &,
+  &.#{$nancalui-prefix}-input-group-addon {
+    border-color: $nancalui-disabled-line;
+  }
+
+  &,
+  & > input,
+  & > .#{$nancalui-prefix}-input-group-addon {
+    color: $nancalui-disabled-text;
+    background-color: $nancalui-disabled-bg;
+    cursor: not-allowed;
+  }
+}
+
+.#{$nancalui-prefix}-body-scrollblock {
+  width: 100%;
+}

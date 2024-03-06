@@ -1,0 +1,203 @@
+@import '../../style/mixins/size';
+@import '../../style/mixins/flex';
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-search {
+  position: relative;
+  @include flex;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: $nancalui-form-control-line;
+  border-radius: 4px;
+  transition: border-color 0.3s $nancalui-animation-ease-in-out-smooth;
+  box-sizing: border-box;
+  &:not(.#{$nancalui-prefix}-search--error):not(.#{$nancalui-prefix}-search--disabled):not(.#{$nancalui-prefix}-search--focus):hover {
+    border-color: $nancalui-form-control-line-hover;
+  }
+
+  .#{$nancalui-prefix}-input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: $nancalui-size-md;
+    // 60px = clear + icon 的宽度
+    padding: 4px 60px 4px 8px;
+    font-size: $nancalui-font-size-md;
+    color: $nancalui-text;
+    box-sizing: border-box;
+    border-radius: $nancalui-border-radius;
+    background-color: $nancalui-form-control-bg;
+
+    &__inner {
+      padding: 0;
+    }
+
+    &__wrapper {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  &--focus {
+    border-color: $nancalui-form-control-line-active;
+  }
+
+  &__clear,
+  &__icon {
+    @include size($nancalui-size-md, $nancalui-size-md);
+    @include flex;
+
+    & svg {
+      @include size(20px, 20px);
+    }
+  }
+
+  &__clear {
+    position: absolute;
+    right: $nancalui-size-md;
+    cursor: pointer;
+
+    & svg {
+      @include size($nancalui-font-size-lg, $nancalui-font-size-lg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 46%;
+      border-left: 1px solid $nancalui-dividing-line;
+    }
+  }
+
+  &__icon {
+    pointer-events: all;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    background: var(--nancalui-primary);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+  }
+
+  &--sm {
+    .#{$nancalui-prefix}-input {
+      height: $nancalui-size-sm;
+      font-size: $nancalui-font-size-sm;
+
+      &.#{$nancalui-prefix}-input--sm {
+        padding: 0 48px 0 6px;
+      }
+    }
+
+    .#{$nancalui-prefix}-search__icon,
+    .#{$nancalui-prefix}-search__clear {
+      @include size($nancalui-size-sm, $nancalui-size-sm);
+
+      svg {
+        @include size(16px, 16px);
+      }
+    }
+
+    .#{$nancalui-prefix}-search__clear {
+      right: $nancalui-size-sm;
+
+      svg {
+        @include size($nancalui-font-size-sm, $nancalui-font-size-sm);
+      }
+    }
+  }
+
+  &--lg {
+    .#{$nancalui-prefix}-input {
+      height: $nancalui-size-lg;
+      font-size: $nancalui-font-size-lg;
+
+      &.#{$nancalui-prefix}-input--lg {
+        padding: 4px 80px 4px 10px;
+      }
+    }
+
+    .#{$nancalui-prefix}-search__icon,
+    .#{$nancalui-prefix}-search__clear {
+      @include size($nancalui-size-lg, $nancalui-size-lg);
+
+      svg {
+        @include size(20px, 20px);
+      }
+    }
+
+    .#{$nancalui-prefix}-search__clear {
+      right: $nancalui-size-lg;
+
+      svg {
+        @include size($nancalui-font-size-lg, $nancalui-font-size-lg);
+      }
+    }
+  }
+
+  &--disabled {
+    .#{$nancalui-prefix}-input {
+      cursor: not-allowed;
+      color: $nancalui-disabled-text;
+      background-color: $nancalui-disabled-bg;
+    }
+
+    .#{$nancalui-prefix}-search__icon {
+      cursor: not-allowed;
+    }
+
+    .icon-search {
+      color: $nancalui-disabled-text !important;
+    }
+  }
+
+  &--left {
+    .#{$nancalui-prefix}-input {
+      padding-right: $nancalui-size-md;
+      padding-left: $nancalui-size-md;
+
+      &.#{$nancalui-prefix}-input--lg {
+        padding-right: $nancalui-size-lg;
+        padding-left: $nancalui-size-lg;
+      }
+
+      &.#{$nancalui-prefix}-input--sm {
+        padding-right: $nancalui-size-sm;
+        padding-left: $nancalui-size-sm;
+      }
+    }
+
+    .#{$nancalui-prefix}-search__clear {
+      right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .#{$nancalui-prefix}-search__icon {
+      left: 0;
+    }
+  }
+
+  &--no-border {
+    border: 1px solid transparent;
+    .#{$nancalui-prefix}-input,
+    .#{$nancalui-prefix}-input__wrapper {
+      background-color: unset;
+    }
+
+    &:not(.#{$nancalui-prefix}-search--focus) .#{$nancalui-prefix}-input:not(:hover, :focus, :active) {
+      border: 1px solid transparent;
+    }
+  }
+}

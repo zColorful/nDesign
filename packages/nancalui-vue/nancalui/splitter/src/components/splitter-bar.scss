@@ -1,0 +1,233 @@
+@import '../../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-splitter__bar {
+  background-color: $nancalui-dividing-line;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  .#{$nancalui-prefix}-splitter__collapse {
+    background-color: $nancalui-dividing-line;
+    position: absolute;
+    z-index: 15;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 10px;
+      height: 2px;
+      background: #ffffff;
+      display: block;
+      position: absolute;
+    }
+
+    &:hover {
+      background-color: $nancalui-brand-hover;
+    }
+  }
+
+  &--horizontal {
+    .#{$nancalui-prefix}-splitter__collapse {
+      width: 12px;
+      height: 30px;
+
+      &.prev,
+      &.next {
+        &.hidden {
+          display: none;
+        }
+      }
+
+      &.prev {
+        border-radius: 0 $nancalui-border-radius-feedback $nancalui-border-radius-feedback 0;
+        left: 100%;
+
+        &::before,
+        &.collapsed::before {
+          top: 9px;
+          left: 1px;
+        }
+
+        &::before {
+          transform: rotate(-70deg);
+        }
+
+        &.collapsed::before {
+          transform: rotate(70deg);
+        }
+
+        &::after,
+        &.collapsed::after {
+          top: 18px;
+          left: 1px;
+        }
+
+        &::after {
+          transform: rotate(70deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(-70deg);
+        }
+      }
+
+      &.next {
+        border-radius: $nancalui-border-radius-feedback 0 0 $nancalui-border-radius-feedback;
+        right: 100%;
+
+        &::before,
+        &.collapsed::before {
+          top: 9px;
+          right: 1px;
+        }
+
+        &::before {
+          transform: rotate(70deg);
+        }
+
+        &.collapsed::before {
+          transform: rotate(-70deg);
+        }
+
+        &::after,
+        &.collapsed::after {
+          top: 18px;
+          right: 1px;
+        }
+
+        &::after {
+          transform: rotate(-70deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(70deg);
+        }
+      }
+    }
+  }
+
+  &--vertical {
+    .#{$nancalui-prefix}-splitter__collapse {
+      height: 12px;
+      width: 30px;
+
+      &.prev,
+      &.next {
+        &.hidden {
+          display: none;
+        }
+      }
+
+      &.prev {
+        border-radius: 0 0 $nancalui-border-radius-feedback $nancalui-border-radius-feedback;
+        top: 100%;
+
+        &::before,
+        &.collapsed::before {
+          bottom: 5px;
+          left: 5px;
+        }
+
+        &::before {
+          transform: rotate(-20deg);
+        }
+
+        &.collapsed::before {
+          transform: rotate(20deg);
+        }
+
+        &::after,
+        &.collapsed::after {
+          bottom: 5px;
+          left: 14px;
+        }
+
+        &::after {
+          transform: rotate(20deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(-20deg);
+        }
+      }
+
+      &.next {
+        border-radius: $nancalui-border-radius-feedback $nancalui-border-radius-feedback 0 0;
+        bottom: 100%;
+
+        &::before,
+        &.collapsed::before {
+          top: 5px;
+          left: 5px;
+        }
+
+        &::before {
+          transform: rotate(20deg);
+        }
+
+        &.collapsed::before {
+          transform: rotate(-20deg);
+          top: 5px;
+          left: 5px;
+        }
+
+        &::after,
+        &.collapsed::after {
+          top: 5px;
+          left: 14px;
+        }
+
+        &::after {
+          transform: rotate(-20deg);
+        }
+
+        &.collapsed::after {
+          transform: rotate(20deg);
+        }
+      }
+    }
+  }
+
+  &--horizontal.resizable:not(.none-resizable),
+  &--vertical.resizable:not(.none-resizable) {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $nancalui-brand-hover;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+    }
+  }
+
+  &--horizontal.resizable {
+    // 修正IE浏览器，css伪元素中鼠标手型无效
+    cursor: col-resize;
+
+    &::after {
+      cursor: col-resize;
+      height: 100%;
+      width: 10px;
+      top: 0;
+    }
+  }
+
+  &--vertical.resizable {
+    cursor: row-resize;
+
+    &::after {
+      cursor: row-resize;
+      width: 100%;
+      height: 10px;
+      left: 0;
+    }
+  }
+}

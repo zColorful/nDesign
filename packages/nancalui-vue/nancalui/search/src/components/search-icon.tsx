@@ -1,0 +1,4 @@
+const SearchIcon = (): JSX.Element => (
+  <svg width="20px" height="20px" viewBox="0 0 18 18" version="1.1"><g id="页面-1" stroke="none" stroke-width="0" fill="none" fill-rule="evenodd"><g id="icon" transform="translate(-168.000000, -785.000000)"><g id="icon_search_n" transform="translate(168.000000, 785.000000)"><path d="M9 14.6666667 C12.1296 14.6666667 14.6666667 12.1296 14.6666667 9 C14.6666667 5.8704 12.1296             3.33333333 9 3.33333333 C5.8704 3.33333333             3.33333333 5.8704 3.33333333 9 C3.33333333 12.1296 5.8704 14.6666667 9 14.6666667 Z" id="路径" stroke="currentColor" stroke-width="1.33333333" stroke-linejoin="round"></path><line x1="13.0739333" y1="13.0739333" x2="15.9023667" y2="15.9023667" id="路径" stroke="currentColor" stroke-width="1.33333333" stroke-linecap="round" stroke-linejoin="round"></line></g></g></g></svg>
+);
+export default SearchIcon;

@@ -1,0 +1,78 @@
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-progress__content {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .#{$nancalui-prefix}-progress__line {
+    width: 100%;
+    position: relative;
+    background: $nancalui-dividing-line;
+
+    .#{$nancalui-prefix}-progress__bar {
+      width: 0;
+      height: 100%;
+      transition: width 0.6s ease;
+      background-color: #447DFD;
+
+      > span {
+        display: block;
+        white-space: nowrap;
+        color: $nancalui-light-text;
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 0 10px;
+      }
+    }
+
+    > span {
+      display: block;
+      white-space: nowrap;
+      color: $nancalui-light-text;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .inside {
+      text-align: center;
+    }
+
+    .insideLeft {
+      text-align: left;
+    }
+
+    .insideRight {
+      text-align: right;
+    }
+  }
+
+  > span {
+    min-width: 46px;
+    padding: 0 5px;
+    text-align: center;
+  }
+}
+
+.#{$nancalui-prefix}-progress__circle {
+  position: relative;
+
+  .#{$nancalui-prefix}-progress__circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: $nancalui-text;
+    line-height: 1;
+    white-space: normal;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}

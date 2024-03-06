@@ -1,0 +1,465 @@
+@import '../../styles-var/nancalui-var.scss';
+
+$paginationChildHeight: 28px;
+
+.nancalui-package-card-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  .circle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -3px);
+    left: -22px;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    margin-right: 15px;
+    background: #e1e1e1;
+  }
+
+  // 默认屏幕展示2个卡片
+  .card-box {
+    height: calc(100% - 76px);
+    padding: 0 10px;
+    overflow: auto;
+  }
+
+  .card {
+    display: inline-block;
+    width: calc(50% - 10px);
+    min-width: 370px;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+
+    .card-img-bg {
+      height: 211px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+    }
+
+    &:hover {
+      background: linear-gradient(180deg, #f3f5f8 0%, #ffffff 100%);
+      box-shadow: 2px 4px 6px 2px rgba(55, 99, 170, 0.06), -2px -4px 6px 2px rgba(255, 255, 255, 0.3);
+
+      .card-img-bg {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      filter: blur(0); // 高斯模糊
+    }
+
+    &:nth-of-type(2n) {
+      margin-right: 0;
+      width: 50%;
+    }
+
+    &-header {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 8px;
+
+      &-title {
+        color: #333333;
+        font-size: 14px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &.hasStatus {
+          width: calc(100% - 70px);
+        }
+      }
+
+      &-status {
+        width: 55px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        background: #f0f7ff;
+        border-radius: 11px;
+        color: $nancalui-brand;
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      &-status.green {
+        color: #04c495;
+        background: #f1fbf6;
+      }
+
+      &-status.yellow {
+        color: #ff7d00;
+        background: #fff6e6;
+      }
+
+      &-status.red {
+        width: 68px;
+        color: #f63838;
+        background: #fff2f0;
+      }
+
+      &-status.gray {
+        color: #697a9a;
+        background: #e9ecf1;
+      }
+    }
+
+    &-date {
+      display: flex;
+      align-items: center;
+      color: #666666;
+      font-size: 12px;
+      margin-bottom: 20px;
+
+      .card-date-svg {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        margin-right: 6px;
+
+        &:last-of-type {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    &-right-img {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      position: absolute;
+      top: 94px;
+      right: 20px;
+    }
+
+    &-right-bg {
+      width: 144px;
+      height: 142px;
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      z-index: 1;
+    }
+
+    &-content {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      padding-left: 22px;
+
+      &-name {
+        position: relative;
+        color: #333333;
+
+        &.has-option {
+          display: inline-block;
+
+          &:hover {
+            color: $nancalui-brand;
+          }
+        }
+
+        &-left {
+          display: inline-block;
+          vertical-align: top;
+          line-height: 26px;
+          overflow: hidden;
+          font-size: 14px;
+          font-weight: bold;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          // max-width: calc(100% - 20px);
+        }
+
+        & svg {
+          &:hover {
+            color: $nancalui-brand;
+            cursor: pointer;
+          }
+        }
+
+        &-btn {
+          display: inline-block;
+          vertical-align: top;
+          width: 26px;
+          height: 26px;
+          padding: 4px;
+          margin-left: 10px;
+          border-radius: 4px;
+
+          &-icon {
+            display: inline-block;
+            vertical-align: top;
+            width: 26px;
+            height: 26px;
+            padding: 4px;
+            cursor: pointer;
+            border-radius: 2px;
+
+            &:hover {
+              background-color: #eeeeee;
+              padding: 4px;
+            }
+          }
+        }
+      }
+
+      &-outBox {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 40px;
+
+        & .card-content-label {
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 0;
+          padding: 6px 0;
+        }
+
+        & .show-more {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 20px;
+          height: 22px;
+          line-height: 20px;
+          cursor: pointer;
+
+          &:hover {
+            color: $nancalui-brand;
+          }
+        }
+      }
+
+      &-label {
+        margin-top: 6px;
+        color: #666666;
+        font-size: 12px;
+        line-height: 22px;
+        // display: flex;
+        &-key {
+          position: relative;
+          font-weight: bolder;
+          color: #333333;
+          margin: 16px 0 6px;
+        }
+
+        &-name {
+          display: inline-block;
+          width: 84px;
+        }
+
+        &-value {
+          display: inline-block;
+          width: calc(100% - 84px);
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          // height: 30px;
+          vertical-align: top;
+        }
+
+        &-btn {
+          padding: 4px 14px;
+          background-color: #f2f3f6;
+          border-radius: 4px;
+          color: #333333;
+          font-size: 12px;
+          margin-right: 10px;
+        }
+
+        &-desc {
+          display: -webkit-box;
+          height: 48px;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    &-data-source {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      margin-bottom: 14px;
+
+      &-name {
+        float: left;
+        color: #333333;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 28px;
+
+        &-icon {
+          width: 16px;
+          height: 16px;
+          margin-left: 20px;
+        }
+      }
+
+      &-btn {
+        float: right;
+      }
+    }
+
+    &-operation {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      border-top: 1px dashed #eeeeee;
+      padding-top: 14px;
+
+      &-more {
+        float: left;
+        color: #333333;
+        font-size: 14px;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        cursor: pointer;
+        text-align: center;
+
+        &:hover {
+          background: rgba(105, 122, 154, 0.14);
+          border-radius: 10px;
+        }
+      }
+
+      &-btn {
+        float: right;
+        margin-left: 10px;
+      }
+    }
+
+    &-mantle {
+      width: 100%;
+      height: 100%;
+      left: -100%;
+      bottom: -100%;
+      background: rgba(4, 12, 43, 0.48);
+      border-radius: 4px;
+      backdrop-filter: blur(10px);
+      box-sizing: border-box;
+      position: absolute;
+      transition: all 0.3s;
+      z-index: 3;
+
+      &-control {
+        width: 100%;
+        height: 20px;
+        position: relative;
+        top: calc(50% - 10px);
+        text-align: center;
+
+        &-btn {
+          display: inline-block;
+          width: 60px;
+          box-sizing: border-box;
+          border-right: 1px solid rgba(255, 255, 255, 0.48);
+
+          &-icon {
+            display: block;
+            margin: 0 auto;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.24);
+            }
+          }
+
+          &:last-of-type {
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    &-mantle.active {
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .footer-pagination {
+    width: 100%;
+    height: 66px;
+    z-index: 9;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 8px 0 rgba(200, 201, 204, 0.5);
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// 屏幕宽度大于1220时展示3个卡片
+@media only screen and (min-width: 1220px) {
+  .cardList {
+    .card {
+      width: calc(33% - 10px);
+
+      &:nth-of-type(2n) {
+        width: calc(33% - 10px);
+        margin-right: 10px;
+      }
+
+      &:nth-of-type(3n) {
+        width: 34%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// 屏幕宽度大于1630时展示4个卡片
+@media only screen and (min-width: 1630px) {
+  .cardList {
+    .card {
+      width: calc(25% - 10px);
+
+      &:nth-of-type(2n) {
+        width: calc(25% - 10px);
+        margin-right: 10px;
+      }
+
+      &:nth-of-type(3n) {
+        width: calc(25% - 10px);
+        margin-right: 10px;
+      }
+
+      &:nth-of-type(4n) {
+        width: 25%;
+        margin-right: 0;
+      }
+    }
+  }
+}

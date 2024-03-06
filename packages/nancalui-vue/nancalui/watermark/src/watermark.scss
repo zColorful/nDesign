@@ -1,0 +1,6 @@
+// 引入主题变量
+@import '../../styles-var/nancalui-var.scss';
+
+.#{$nancalui-prefix}-watermark {
+  position: relative;
+}
